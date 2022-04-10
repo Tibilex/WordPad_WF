@@ -58,6 +58,9 @@
     <Compile Include="Controls\CustomToolBarMain.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CustomToolBarView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\IconsToolBar.cs">
       <SubType>Component</SubType>
     </Compile>
