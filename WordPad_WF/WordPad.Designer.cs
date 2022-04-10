@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "WordPad";
-            this.Text = "grkk";
+            this.Text = "WordPad";
             this.Load += new System.EventHandler(this.WordPad_Load);
             this.ResumeLayout(false);
 

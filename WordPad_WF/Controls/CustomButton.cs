@@ -11,6 +11,7 @@ namespace WordPad_WF.Controls
         private bool MouseEntered = false;
         private bool MousePressed = false;
         private Image image;
+
         public CustomButton(string text, Point point, Image image)
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
@@ -23,7 +24,7 @@ namespace WordPad_WF.Controls
             this.image = image;
             this.Location = point;
             this.Text = text;
-            this.Size = new Size(250, 50);
+            this.Size = new Size(250, 42);
             this.ForeColor = Color.Black;
             this.Font = new Font("Gadugi", 9F, FontStyle.Regular);
             _format.Alignment = StringAlignment.Near;
@@ -37,8 +38,8 @@ namespace WordPad_WF.Controls
             graphic.Clear(Parent.BackColor); 
 
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
-            Rectangle rectText = new Rectangle(50, 0, Width - 1, Height - 1);
-            Rectangle rectimage = new Rectangle(0, 1, Width - 200, Height - 1);
+            Rectangle rectText = new Rectangle(60, 0, Width - 1, Height - 1);
+            Rectangle rectimage = new Rectangle(10, 2, 36, 36);
 
             graphic.DrawImage(image, rectimage);
             graphic.DrawRectangle(new Pen(BackColor), rect);
