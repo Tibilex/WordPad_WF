@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="close_window48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="create24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\create24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="formName" xml:space="preserve">
-    <value>WordPad</value>
-  </data>
-  <data name="maximize_window48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maximize_window48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimize48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="open_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="print24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pull_down48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pull_down48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redo24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redo24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="send_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\send_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="square_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\square_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start_menu24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\start_menu24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="undo24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\undo24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

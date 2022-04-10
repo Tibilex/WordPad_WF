@@ -55,11 +55,14 @@
     <Compile Include="Controls\CustomTetxBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controls\IconsToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WordPad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="WordPad.Designer.cs">
+      <DependentUpon>WordPad.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +76,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WordPad.resx">
+      <DependentUpon>WordPad.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +91,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start_menu24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pull_down48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
