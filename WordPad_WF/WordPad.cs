@@ -12,22 +12,32 @@ namespace WordPad_WF
 
         IconsToolBar iconsToolBar;
         ToolStripMenuItem fileToolBar;
+        ToolStripMenuItem MainToolBar;
+        ToolStripMenuItem ViewToolBar;
         MenuStrip menuStrip = new MenuStrip();
         CustomToolBarFile file = new CustomToolBarFile();
+        CustomToolBarMain main = new CustomToolBarMain();
 
         public WordPad()
         {
             InitializeComponent();
             this.Name = Properties.Resources.formName;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Size = new Size(1000, 1000);
             //this.FormBorderStyle = FormBorderStyle.None;
         }
         private void WordPad_Load(object sender, EventArgs e)
         {
+
             this.Controls.Add(menuStrip);
             menuStrip.Items.Add(fileToolBar = new ToolStripMenuItem("Файл") { BackColor = Color.FromArgb(0, 128, 204), ForeColor = Color.White });
+            menuStrip.Items.Add(MainToolBar = new ToolStripMenuItem("Главная") { Padding = new Padding(1, 1, 1, 3) });
+            menuStrip.Items.Add(ViewToolBar = new ToolStripMenuItem("Вид") { Padding = new Padding(1, 1, 1, 3) });
+
             Controls.Add(file);
+            Controls.Add(main);
             file.Visible = false;
+            file.buttonExit.Click += Exit;
             fileToolBar.MouseDown += FileTab;
 
             iconsToolBar = new IconsToolBar(this);
@@ -35,7 +45,9 @@ namespace WordPad_WF
             iconsToolBar.save.Click += Save;
             iconsToolBar.undo.Click += Undo;
             iconsToolBar.redo.Click += Redo;
+
         }
+
 
         private void FileTab(object sender, EventArgs e)
         {
@@ -83,6 +95,10 @@ namespace WordPad_WF
         private void QuickPrint(object sender, EventArgs e)
         {
 
+        }
+        private void Exit(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
