@@ -6,7 +6,15 @@ namespace WordPad_WF.Controls
 {
     class CustomToolBarFile : Panel
     {
-        CustomButton button;
+        public CustomButton buttonCreate;
+        public CustomButton buttonOpen;
+        public CustomButton buttonSave;
+        public CustomButton buttonSaveAS;
+        public CustomButton buttonPrint;
+        public CustomButton buttonSendMail;
+        public CustomButton buttonAbout;
+        public CustomButton buttonExit;
+
         GroupBox groupBox;
         GroupBox groupBox2;
         GroupBox groupBox3;
@@ -20,37 +28,33 @@ namespace WordPad_WF.Controls
             groupBox = new GroupBox()
             {
                 Location = new Point(4, -5),
-                Size = new Size(252, 180),
-                Text = ""                
+                Size = new Size(252, 180),               
             };
 
-            groupBox.Controls.Add(button = new CustomButton("Создать", new Point(1,8),Properties.Resources.create_40px));
-            groupBox.Controls.Add(button = new CustomButton("Открыть", new Point(1,50),Properties.Resources.live_folder_40px));
-            groupBox.Controls.Add(button = new CustomButton("Сохранить", new Point(1,92),Properties.Resources.save_40px));
-            groupBox.Controls.Add(button = new CustomButton("Сохранить как", new Point(1,134),Properties.Resources.save_as_40px));
+            groupBox.Controls.Add(buttonCreate = new CustomButton("Создать", new Point(1,8),Properties.Resources.create_40px));
+            groupBox.Controls.Add(buttonOpen = new CustomButton("Открыть", new Point(1,50),Properties.Resources.live_folder_40px));
+            groupBox.Controls.Add(buttonSave = new CustomButton("Сохранить", new Point(1,92),Properties.Resources.save_40px));
+            groupBox.Controls.Add(buttonSaveAS = new CustomButton("Сохранить как", new Point(1,134),Properties.Resources.save_as_40px));
 
             groupBox2 = new GroupBox()
             {
                 Location = new Point(4, groupBox.Height - 12),
                 Size = new Size(252, 94),
-                Text = ""
             };
-            groupBox2.Controls.Add(button = new CustomButton("Печать", new Point(1, 8), Properties.Resources.print_40px));
-            groupBox2.Controls.Add(button = new CustomButton("Отправить по эл. почте", new Point(1, 50), Properties.Resources.send_email_40px));
+            groupBox2.Controls.Add(buttonPrint = new CustomButton("Печать", new Point(1, 8), Properties.Resources.print_40px));
+            groupBox2.Controls.Add(buttonSendMail = new CustomButton("Отправить по эл. почте", new Point(1, 50), Properties.Resources.send_email_40px));
             groupBox3 = new GroupBox()
             {
                 Location = new Point(4, groupBox.Height + groupBox2.Height - 24),
                 Size = new Size(252, 100),
-                Text = ""
             };
-            groupBox3.Controls.Add(button = new CustomButton("О программе", new Point(1, 12), Properties.Resources.info_40px));
-            groupBox3.Controls.Add(button = new CustomButton("Выход", new Point(1, 54), Properties.Resources.Logout_40px));
+            groupBox3.Controls.Add(buttonAbout = new CustomButton("О программе", new Point(1, 12), Properties.Resources.info_40px));
+            groupBox3.Controls.Add(buttonExit = new CustomButton("Выход", new Point(1, 54), Properties.Resources.Logout_40px));
 
             groupBox4 = new GroupBox()
             {
                 Location = new Point(255, -5),
                 Size = new Size(345, 32),
-                Text = ""
             };
             groupBox4.Controls.Add(new Label() 
             { 
@@ -66,7 +70,6 @@ namespace WordPad_WF.Controls
             {
                 Location = new Point(255, 20),
                 Size = new Size(345, 330),
-                Text = ""
             };
             groupBox5.Controls.Add(new RichTextBox()
             {
@@ -77,6 +80,7 @@ namespace WordPad_WF.Controls
                 ReadOnly = true,
                 BorderStyle = BorderStyle.None
             });
+
             this.Controls.Add(groupBox);
             this.Controls.Add(groupBox2);
             this.Controls.Add(groupBox3);

@@ -26,7 +26,7 @@ namespace WordPad_WF.Controls
             this.Text = text;
             this.Size = new Size(250, 42);
             this.ForeColor = Color.Black;
-            this.Font = new Font("Gadugi", 9F, FontStyle.Regular);
+            this.Font = new Font("Arial", 9F, FontStyle.Regular);
             _format.Alignment = StringAlignment.Near;
             _format.LineAlignment = StringAlignment.Center;
         }
