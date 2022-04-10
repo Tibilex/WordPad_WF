@@ -58,6 +58,11 @@
     <Compile Include="Controls\IconsToolBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="WordPad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,14 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="WordPad.resx">
       <DependentUpon>WordPad.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,43 +93,58 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\create24px.png" />
+    <None Include="Resources\create_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\open_24px.png" />
+    <None Include="Resources\live_folder_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\print24px.png" />
+    <None Include="Resources\save_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\redo24px.png" />
+    <None Include="Resources\save_as_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\save24px.png" />
+    <None Include="Resources\print_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\send_24px.png" />
+    <None Include="Resources\send_email_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\start_menu24px.png" />
+    <None Include="Resources\info_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\undo24px.png" />
+    <None Include="Resources\Logout_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pull_down48px.png" />
+    <None Include="Resources\start_menu_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\maximize_window48px.png" />
+    <None Include="Resources\redo_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\minimize48px.png" />
+    <None Include="Resources\undo_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\square_48px.png" />
+    <None Include="Resources\pull_down_40px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close_window48px.png" />
+    <None Include="Resources\close_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drag_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

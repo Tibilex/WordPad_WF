@@ -39,30 +39,30 @@ namespace WordPad_WF.Controls
             this.ShowItemToolTips = true;
             this.Stretch = false;
 
-            Items.AddRange(new ToolStripItem[] { window = new ToolStripMenuItem(Properties.Resources.start_menu24px) 
+            Items.AddRange(new ToolStripItem[] { window = new ToolStripMenuItem(Properties.Resources.start_menu_40px) 
             { Size = new Size(24, 24), AutoSize = false } });
 
             window.DropDownItems.AddRange(new ToolStripItem[]
             {
-                reestablish = new ToolStripMenuItem("Восстановить", Properties.Resources.maximize_window48px),
-                move = new ToolStripMenuItem("Переместить"),
-                size = new ToolStripMenuItem("Размер"),
-                minimize = new ToolStripMenuItem("Свернуть", Properties.Resources.minimize48px),
-                maximize = new ToolStripMenuItem("Развернуть", Properties.Resources.square_48px),
-                exit = new ToolStripMenuItem("Закрыть", Properties.Resources.close_window48px),
+                reestablish = new ToolStripMenuItem("Восстановить", Properties.Resources.restore_window_40px),
+                move = new ToolStripMenuItem("Переместить", Properties.Resources.expand_40px),
+                size = new ToolStripMenuItem("Размер", Properties.Resources.drag_40px),
+                minimize = new ToolStripMenuItem("Свернуть", Properties.Resources.minimize_window_40px),
+                maximize = new ToolStripMenuItem("Развернуть", Properties.Resources.maximize_window_40px),
+                exit = new ToolStripMenuItem("Закрыть", Properties.Resources.close_window_40px),
             });
 
             Items.Add(new ToolStripSeparator());
 
-            Items.Add(save = new ToolStripMenuItem(Properties.Resources.save24px) { Visible = true, Size = new Size(24,24), AutoSize = false});
-            Items.Add(undo = new ToolStripMenuItem(Properties.Resources.undo24px) { Visible = true, Size = new Size(24, 24), AutoSize = false });
-            Items.Add(redo = new ToolStripMenuItem(Properties.Resources.redo24px) { Visible = true, Size = new Size(24, 24), AutoSize = false });
-            Items.Add(create = new ToolStripMenuItem(Properties.Resources.create24px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
-            Items.Add(open = new ToolStripMenuItem(Properties.Resources.open_24px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
-            Items.Add(quickPrint = new ToolStripMenuItem(Properties.Resources.print24px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
-            Items.Add(sendMail = new ToolStripMenuItem(Properties.Resources.send_24px) { Visible = false, Size = new Size(24,24), AutoSize = false });
+            Items.Add(save = new ToolStripMenuItem(Properties.Resources.save_40px) { Visible = true, Size = new Size(24,24), AutoSize = false});
+            Items.Add(undo = new ToolStripMenuItem(Properties.Resources.undo_40px) { Visible = true, Size = new Size(24, 24), AutoSize = false });
+            Items.Add(redo = new ToolStripMenuItem(Properties.Resources.redo_40px) { Visible = true, Size = new Size(24, 24), AutoSize = false });
+            Items.Add(create = new ToolStripMenuItem(Properties.Resources.create_40px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
+            Items.Add(open = new ToolStripMenuItem(Properties.Resources.live_folder_40px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
+            Items.Add(quickPrint = new ToolStripMenuItem(Properties.Resources.print_40px) { Visible = false, Size = new Size(24, 24), AutoSize = false });
+            Items.Add(sendMail = new ToolStripMenuItem(Properties.Resources.send_email_40px) { Visible = false, Size = new Size(24,24), AutoSize = false });
             
-            Items.AddRange(new ToolStripItem[] { toolList = new ToolStripMenuItem(Properties.Resources.pull_down48px)
+            Items.AddRange(new ToolStripItem[] { toolList = new ToolStripMenuItem(Properties.Resources.pull_down_40px)
             {Size = new Size(24, 24), AutoSize = false } });
 
             toolList.DropDownItems.AddRange(new ToolStripItem[]

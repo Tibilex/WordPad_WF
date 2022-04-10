@@ -13,6 +13,7 @@ namespace WordPad_WF
         IconsToolBar iconsToolBar;
         ToolStripMenuItem fileToolBar;
         MenuStrip menuStrip = new MenuStrip();
+        CustomToolBarFile file = new CustomToolBarFile();
 
         public WordPad()
         {
@@ -20,26 +21,32 @@ namespace WordPad_WF
             this.Name = Properties.Resources.formName;
             this.StartPosition = FormStartPosition.CenterScreen;
             //this.FormBorderStyle = FormBorderStyle.None;
-
-
         }
         private void WordPad_Load(object sender, EventArgs e)
         {
             this.Controls.Add(menuStrip);
             menuStrip.Items.Add(fileToolBar = new ToolStripMenuItem("Файл") { BackColor = Color.FromArgb(0, 128, 204), ForeColor = Color.White });
+            Controls.Add(file);
+            file.Visible = false;
+            fileToolBar.MouseDown += FileTab;
 
-            fileToolBar.Click += FileTab;
             iconsToolBar = new IconsToolBar(this);
             iconsToolBar.open.Click += Open;
             iconsToolBar.save.Click += Save;
             iconsToolBar.undo.Click += Undo;
             iconsToolBar.redo.Click += Redo;
-
         }
 
         private void FileTab(object sender, EventArgs e)
         {
-            
+            if (file.Visible == true)
+            {
+                file.Visible = false;
+            }
+            else
+            {
+                file.Visible = true;
+            }
         }
 
         private void Open(object sender, EventArgs e)
