@@ -13,6 +13,7 @@ namespace WordPad_WF
         SaveFileDialog saveFileDialog = new SaveFileDialog();
         PrintDialog printDialog = new PrintDialog();
         PrintDocument printDoc = new PrintDocument();
+        ColorDialog ColorDialog = new ColorDialog();
 
         IconsToolBar iconsToolBar;
         ToolStripMenuItem fileToolBar;
@@ -25,6 +26,11 @@ namespace WordPad_WF
         CustomToolBarMain main = new CustomToolBarMain();
         CustomToolBarView view = new CustomToolBarView();
         CustomTextBox CustomTextBox = new CustomTextBox();
+
+        string fileFormatFilter = "Файл RTF (*.rtf)|*.rtf|" +
+                "Текстовый документ (*.txt)|*.txt|" +
+                "Документ Office Open XML (*.docx)|*.docx|" +
+                "Документ OpenDocument (*.odt)|*.odt";
 
         public WordPad()
         {
@@ -59,6 +65,11 @@ namespace WordPad_WF
             file.buttonAbout.Click += AboutProgram;
             file.buttonSaveAs.MouseHover += EnterSaveAsFormat;
             file.saveFileFormatButtons.MouseLeave += LeaveSaveAsFormat;
+            file.buttonRTF.Click += SaveAs;
+            file.buttonTXT.Click += SaveAs;
+            file.buttonXML.Click += SaveAs;
+            file.buttonOpenDoc.Click += SaveAs;
+            file.buttonAllFormats.Click += SaveAs;
 
             fileToolBar.MouseDown += FileTab;
             MainToolBar.MouseDown += MainTab;
@@ -68,10 +79,16 @@ namespace WordPad_WF
             main.fontBold.Click += BoldFont;
             main.fontItalic.Click += ItalicFont;
             main.fontUnderline.Click += UnderlineFont;
+            main.strikethrow.Click += StrikeOutFont;
+            main.subscript.Click += Subscrypt;
+            main.superscrypt.Click += SuperScrypt;
             main.fontName.SelectedIndexChanged += FontName;
             main.fontSize.SelectedIndexChanged += FontSize;
+            main.fontColor.Click += FontColor;
+            main.textSelectionСolor.Click += TextSelectedColor;
+            main.fontSizeUp.Click += FontSizeUp;
+            main.fontSizeDown.Click += FontSizeDown;
 
-            this.Controls.Add(CustomTextBox);
             iconsToolBar = new IconsToolBar(this);
             iconsToolBar.open.Click += Open;
             iconsToolBar.save.Click += Save;
@@ -83,23 +100,62 @@ namespace WordPad_WF
             iconsToolBar.minimize.Click += Minimize;
             iconsToolBar.maximize.Click += Maximize;
             iconsToolBar.reestablish.Click += Reestablish;
+
+            this.Controls.Add(CustomTextBox);
         }
 
+        #region - Events -
 
         #region - Font Style -
+
+        // font size up combobox event
+        private void FontSizeUp(object sender, EventArgs e)
+        {
+            if (main.fontSize.SelectedIndex != main.fontSize.Items.Count -1) 
+            {
+                main.fontSize.SelectedIndex++;
+            }
+        }
+        // font size down combobox event
+        private void FontSizeDown(object sender, EventArgs e)
+        {
+            if (main.fontSize.SelectedIndex != 0)
+            {
+                main.fontSize.SelectedIndex--;
+            }
+        }
+        // Color BackGround Text event
+        private void TextSelectedColor(object sender, EventArgs e)
+        {
+            DialogResult = ColorDialog.ShowDialog(this);
+            if (DialogResult == DialogResult.OK)
+            {
+                CustomTextBox.SelectionBackColor = ColorDialog.Color;
+            }
+        }
+        // Color Text event
+        private void FontColor(object sender, EventArgs e)
+        {
+            DialogResult = ColorDialog.ShowDialog(this);
+            if (DialogResult == DialogResult.OK)
+            {
+                CustomTextBox.ForeColor = ColorDialog.Color;
+            }
+        }
+        // Font Size event
         private void FontSize(object sender, EventArgs e)
         {
             Font SelectedCurrentFont = CustomTextBox.SelectionFont;
             float newSize = (float)Convert.ToDouble(main.fontSize.SelectedItem);
             CustomTextBox.SelectionFont = new Font(SelectedCurrentFont.FontFamily, newSize, SelectedCurrentFont.Style);
         }
-
+        // Font name event
         private void FontName(object sender, EventArgs e)
         {
             Font SelectedCurrentFont = CustomTextBox.SelectionFont;
             CustomTextBox.SelectionFont = new Font(main.fontName.SelectedItem.ToString(), SelectedCurrentFont.Size, SelectedCurrentFont.Style);
         }
-
+        // Underline text format event
         private void UnderlineFont(object sender, EventArgs e)
         {
             if (CustomTextBox.SelectionFont != null)
@@ -118,7 +174,26 @@ namespace WordPad_WF
                 CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
             }
         }
+        // Strikeout text format event
+        private void StrikeOutFont(object sender, EventArgs e)
+        {
+            if (CustomTextBox.SelectionFont != null)
+            {
+                Font currentFont = CustomTextBox.SelectionFont;
+                FontStyle newFontStyle;
 
+                if (CustomTextBox.SelectionFont.Strikeout == true)
+                {
+                    newFontStyle = FontStyle.Regular;
+                }
+                else
+                {
+                    newFontStyle = FontStyle.Strikeout;
+                }
+                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+            }
+        }
+        // Italic text format event
         private void ItalicFont(object sender, EventArgs e)
         {
             if (CustomTextBox.SelectionFont != null)
@@ -137,7 +212,7 @@ namespace WordPad_WF
                 CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
             }
         }
-
+        // Bold text format event
         private void BoldFont(object sender, EventArgs e)
         {
             Font currentFont = CustomTextBox.SelectionFont;
@@ -153,7 +228,17 @@ namespace WordPad_WF
             }
             CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
         }
-
+        // Superscrypt text format event
+        private void SuperScrypt(object sender, EventArgs e)
+        {
+            CustomTextBox.SelectionCharOffset = 8;
+        }
+        // Subscrypt text format event
+        private void Subscrypt(object sender, EventArgs e)
+        {
+            CustomTextBox.SelectionCharOffset = -8;
+        }
+        // font format event
         private void FontFormat(object sender, MouseEventArgs e)
         {
             Font SelectedCurrentFont = CustomTextBox.SelectionFont;
@@ -230,12 +315,8 @@ namespace WordPad_WF
 
         private void Open(object sender, EventArgs e)
         {
-                openFileDialog.Filter = "Все документы WordPad (*.rtf,*.docx,*.odt,*.txt)|*.rtf;*.docx;*.odt;*.txt|" +
-                "Файл RTF (*.rtf)|*.rtf|" +
-                "Текстовый документ (*.txt)|*.txt|" +
-                "Документ Office Open XML (*.docx)|*.docx|" +
-                "Документ OpenDocument (*.odt)|*.odt";
-                openFileDialog.ShowDialog();
+            openFileDialog.Filter = $"Все документы WordPad (*.rtf,*.docx,*.odt,*.txt)|*.rtf;*.docx;*.odt;*.txt|{fileFormatFilter}";
+            openFileDialog.ShowDialog();
 
             string fileNameCheck = openFileDialog.FileName;
 
@@ -255,7 +336,7 @@ namespace WordPad_WF
                 DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNo);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    SaveFileDialog();
+                    SaveFileDialog(fileFormatFilter);
                 }
             }
             else { CustomTextBox.Text = ""; }
@@ -275,7 +356,7 @@ namespace WordPad_WF
         }
         private void SaveAs(object sender, EventArgs e)
         {
-            SaveFileDialog();
+            SaveFileDialog(fileFormatFilter);
             file.Visible = false;
         }
         private void Undo(object sender, EventArgs e) { SendKeys.Send("^z"); }
@@ -303,18 +384,18 @@ namespace WordPad_WF
             DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
             if (DialogResult == DialogResult.Yes)
             {
-                SaveFileDialog();
+                SaveFileDialog(fileFormatFilter);
             }
             if (DialogResult == DialogResult.No) { this.Close(); }
         }
-        private void SaveFileDialog()
+
+        #endregion
+
+        private void SaveFileDialog(string filter)
         {
             if (CustomTextBox.Text != "")
             {
-                saveFileDialog.Filter = "Файл RTF (*.rtf)|*.rtf|" +
-                "Текстовый документ (*.txt)|*.txt|" +
-                "Документ Office Open XML (*.docx)|*.docx|" +
-                "Документ OpenDocument (*.odt)|*.odt";
+                saveFileDialog.Filter = filter;
                 saveFileDialog.ShowDialog();
 
                 string path = saveFileDialog.FileName;

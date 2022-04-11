@@ -12,6 +12,7 @@ namespace WordPad_WF.Controls
             this.Size = new Size(885, 785);
             this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             this.Multiline = true;
+            this.Font = new Font("Calibri", 11F, FontStyle.Regular);
         }
     }
 }
