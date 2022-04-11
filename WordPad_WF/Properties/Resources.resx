@@ -118,11 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bold_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bold_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="crayon_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crayon_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="create_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\create_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="decrease_font_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\decrease_font_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drag_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drag_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +142,14 @@
   <data name="formName" xml:space="preserve">
     <value>WordPad</value>
   </data>
+  <data name="increase_font_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\increase_font_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="italic_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\italic_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="live_folder_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\live_folder_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,6 +186,21 @@
   </data>
   <data name="start_menu_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\start_menu_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strikethrough_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strikethrough_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subscript_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subscript_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="superscript_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\superscript_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text_color_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\text_color_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="underline_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\underline_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undo_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

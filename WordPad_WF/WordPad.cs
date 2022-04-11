@@ -53,6 +53,7 @@ namespace WordPad_WF
             iconsToolBar.save.Click += Save;
             iconsToolBar.undo.Click += Undo;
             iconsToolBar.redo.Click += Redo;
+            iconsToolBar.exit.Click += Exit;
 
         }
 
@@ -114,7 +115,17 @@ namespace WordPad_WF
         }
         private void Exit(object sender, EventArgs e)
         {
-            this.Close();
+
+            DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
+            if (DialogResult == DialogResult.Yes) 
+            { 
+                saveFileDialog.Filter = "Файл RTF (*.rtf)|*.rtf|" +
+                    "Текстовый документ (*.txt)|*.txt|" +
+                    "Документ Office Open XML (*.docx)|*.docx|" +
+                    "Документ OpenDocument (*.odt)|*.odt";
+                saveFileDialog.ShowDialog();
+            }
+            if (DialogResult == DialogResult.No) { this.Close(); }
         }
 
     }

@@ -6,9 +6,9 @@ namespace WordPad_WF.Controls
 {
     internal class CustomToolBarView : Panel
     {
-        GroupBox groupBox;
-        GroupBox groupBox2;
-        GroupBox groupBox3;
+        GroupBox scaleSector;
+        GroupBox showHideSector;
+        GroupBox optionsSector;
 
         public CustomToolBarView()
         {
@@ -18,12 +18,12 @@ namespace WordPad_WF.Controls
             //this.BackColor = Color.Gray;
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
-            groupBox = new GroupBox()
+            scaleSector = new GroupBox()
             {
                 Location = new Point(0, -5),
                 Size = new Size(185, 106),
             };
-            groupBox.Controls.Add(new Label()
+            scaleSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(100, 15),
@@ -31,12 +31,12 @@ namespace WordPad_WF.Controls
                 Location = new Point(70, this.Height - 11)
             });
 
-            groupBox2 = new GroupBox()
+            showHideSector = new GroupBox()
             {
                 Location = new Point(158, -5),
                 Size = new Size(180, 106),
             };
-            groupBox2.Controls.Add(new Label()
+            showHideSector.Controls.Add(new Label()
             {
                 AutoSize = true,
                 Size = new Size(120, 15),
@@ -44,12 +44,12 @@ namespace WordPad_WF.Controls
                 Location = new Point(45, this.Height - 11)
             });
 
-            groupBox3 = new GroupBox()
+            optionsSector = new GroupBox()
             {
                 Location = new Point(336, -5),
                 Size = new Size(158, 106),
             };
-            groupBox3.Controls.Add(new Label()
+            optionsSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(60, 15),
@@ -57,9 +57,9 @@ namespace WordPad_WF.Controls
                 Location = new Point(50, this.Height - 11)
             });
 
-            this.Controls.Add(groupBox);
-            this.Controls.Add(groupBox2);
-            this.Controls.Add(groupBox3);
+            this.Controls.Add(scaleSector);
+            this.Controls.Add(showHideSector);
+            this.Controls.Add(optionsSector);
         }
     }
 }
