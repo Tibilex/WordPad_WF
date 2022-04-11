@@ -13,21 +13,21 @@ namespace WordPad_WF.Controls
         GroupBox insertSector;
         GroupBox editingSector;
 
-        ComboBox fontType;
-        ComboBox fontSize;
+        public ComboBox fontType;
+        public ComboBox fontSize;
 
-        CheckBox fontBold;
-        CheckBox fontItalic;
-        CheckBox fontUnderline;
-        CheckBox strikethrow;
-        
-        RadioButton subscript;
-        RadioButton superscrypt;
+        public CheckBox fontBold;
+        public CheckBox fontItalic;
+        public CheckBox fontUnderline;
+        public CheckBox strikethrow;
 
-        Button fontSizeUp;
-        Button fontSizeDown;      
-        Button fontColor;      
-        Button textSelectionСolor;      
+        public RadioButton subscript;
+        public RadioButton superscrypt;
+
+        public Button fontSizeUp;
+        public Button fontSizeDown;
+        public Button fontColor;
+        public Button textSelectionСolor;      
 
         public CustomToolBarMain()
         {

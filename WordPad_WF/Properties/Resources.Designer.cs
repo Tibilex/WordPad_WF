@@ -61,6 +61,15 @@ namespace WordPad_WF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на About programm.
+        /// </summary>
+        internal static string aboutFormName {
+            get {
+                return ResourceManager.GetString("aboutFormName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap bold_20px {
