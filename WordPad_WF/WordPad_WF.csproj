@@ -194,5 +194,26 @@
   <ItemGroup>
     <None Include="Resources\text_color_20px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows_10_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code_fork_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml_file_64px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

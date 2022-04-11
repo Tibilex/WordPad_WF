@@ -57,6 +57,8 @@ namespace WordPad_WF
             file.buttonSendMail.Click += SendMail;
             file.buttonExit.Click += Exit;
             file.buttonAbout.Click += AboutProgram;
+            file.buttonSaveAs.MouseHover += EnterSaveAsFormat;
+            file.saveFileFormatButtons.MouseLeave += LeaveSaveAsFormat;
 
             fileToolBar.MouseDown += FileTab;
             MainToolBar.MouseDown += MainTab;
@@ -82,6 +84,7 @@ namespace WordPad_WF
             iconsToolBar.maximize.Click += Maximize;
             iconsToolBar.reestablish.Click += Reestablish;
         }
+
 
         #region - Font Style -
         private void FontSize(object sender, EventArgs e)
@@ -178,6 +181,21 @@ namespace WordPad_WF
         }
         #endregion
 
+        private void EnterSaveAsFormat(object sender, EventArgs e)
+        {
+            file.lastDocLabel.Visible = false;
+            file.openDocumentList.Visible = false;
+            file.saveFileFormatLabel.Visible = true;
+            file.saveFileFormatButtons.Visible = true;
+        }
+        private void LeaveSaveAsFormat(object sender, EventArgs e)
+        {
+            file.lastDocLabel.Visible = true;
+            file.openDocumentList.Visible = true;
+            file.saveFileFormatLabel.Visible = false;
+            file.saveFileFormatButtons.Visible = false;
+        }
+
         private void AboutProgram(object sender, EventArgs e)
         {
             aboutProgramForm = new AboutProgramForm();
@@ -251,8 +269,6 @@ namespace WordPad_WF
                 if (path != "")
                 {
                     File.WriteAllText(path, CustomTextBox.Text);
-                    string[] array = path.Split('\\');
-                    CustomTextBox.Text = array[array.Length - 1];
                 }
             }
             file.Visible = false;
@@ -305,8 +321,6 @@ namespace WordPad_WF
                 if (path != "")
                 {
                     File.WriteAllText(path, CustomTextBox.Text);
-                    string[] array = path.Split('\\');
-                    CustomTextBox.Text = array[array.Length - 1];
                 }
                 saveFileDialog.Reset();
             }

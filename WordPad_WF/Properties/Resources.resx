@@ -117,15 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="aboutFormName" xml:space="preserve">
     <value>About programm</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bold_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bold_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="code_fork_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\code_fork_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="crayon_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crayon_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +141,12 @@
   </data>
   <data name="decrease_font_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\decrease_font_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="doc_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doc_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drag_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drag_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,10 +214,19 @@
   <data name="text_color_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text_color_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="txt_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\txt_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="underline_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\underline_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undo_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="windows_10_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\windows_10_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xml_file_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xml_file_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

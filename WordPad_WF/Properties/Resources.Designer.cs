@@ -61,6 +61,21 @@ namespace WordPad_WF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Самодельный WordPad в курсе обучения
+        ///Компьютерная Академия ШАГ.
+        ///
+        ///Custom WordPad in the course of study at the
+        ///InStep computer academy
+        ///
+        ///https://github.com/Tibilex/WordPad_WF/tree/work .
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на About programm.
         /// </summary>
         internal static string aboutFormName {
@@ -92,6 +107,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap code_fork_120px {
+            get {
+                object obj = ResourceManager.GetObject("code_fork_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap crayon_20px {
             get {
                 object obj = ResourceManager.GetObject("crayon_20px", resourceCulture);
@@ -115,6 +140,26 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap decrease_font_20px {
             get {
                 object obj = ResourceManager.GetObject("decrease_font_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doc_64px {
+            get {
+                object obj = ResourceManager.GetObject("doc_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_64px {
+            get {
+                object obj = ResourceManager.GetObject("document_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -341,6 +386,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap txt_64px {
+            get {
+                object obj = ResourceManager.GetObject("txt_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap underline_20px {
             get {
                 object obj = ResourceManager.GetObject("underline_20px", resourceCulture);
@@ -354,6 +409,26 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap undo_40px {
             get {
                 object obj = ResourceManager.GetObject("undo_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap windows_10_120px {
+            get {
+                object obj = ResourceManager.GetObject("windows_10_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xml_file_64px {
+            get {
+                object obj = ResourceManager.GetObject("xml_file_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
