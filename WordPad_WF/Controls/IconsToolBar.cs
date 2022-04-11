@@ -6,6 +6,8 @@ namespace WordPad_WF.Controls
 {
     class IconsToolBar : MenuStrip
     {
+        #region - Objects - 
+
         ToolStripMenuItem window;
         public ToolStripMenuItem reestablish;
         public ToolStripMenuItem minimize;
@@ -31,6 +33,8 @@ namespace WordPad_WF.Controls
         public ToolStripMenuItem open;
         public ToolStripMenuItem quickPrint;
         public ToolStripMenuItem sendMail;
+
+        #endregion
 
         public IconsToolBar(WordPad form)
         {
@@ -93,6 +97,8 @@ namespace WordPad_WF.Controls
             form.Controls.Add(this);
         }
 
+        #region - Events -
+
         private void SendMail(object sender, EventArgs e)
         {
             if (sendMailContext.Checked) { sendMail.Visible = true; }
@@ -134,6 +140,8 @@ namespace WordPad_WF.Controls
             if (saveContext.Checked) { save.Visible = true;}
             else { save.Visible = false; }
         }
+
+        #endregion
 
     }
 }

@@ -7,6 +7,7 @@ namespace WordPad_WF.Controls
 {
     class CustomToolBarMain : Panel
     {
+        #region - Objects - 
         GroupBox bufferSector;
         GroupBox fontSector;
         GroupBox paragraphSector;
@@ -27,7 +28,9 @@ namespace WordPad_WF.Controls
         public Button fontSizeUp;
         public Button fontSizeDown;
         public Button fontColor;
-        public Button textSelectionСolor;      
+        public Button textSelectionСolor;
+
+        #endregion
 
         public CustomToolBarMain()
         {

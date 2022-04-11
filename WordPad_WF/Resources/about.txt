@@ -1,0 +1,7 @@
+Самодельный WordPad в курсе обучения
+Компьютерная Академия ШАГ.
+
+Custom WordPad in the course of study at the
+InStep computer academy
+
+https://github.com/Tibilex/WordPad_WF/tree/work 
