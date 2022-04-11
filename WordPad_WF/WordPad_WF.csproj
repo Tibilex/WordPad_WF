@@ -55,7 +55,7 @@
     <Compile Include="Controls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\CustomTetxBox.cs">
+    <Compile Include="Controls\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CustomToolBarFile.cs">

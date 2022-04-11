@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace WordPad_WF.Controls
 {
-    class CustomTetxBox : RichTextBox
+    class CustomTextBox : RichTextBox
     {
-        public CustomTetxBox()
+        public CustomTextBox()
         {
             this.Location = new Point(50, 156);
             this.Size = new Size(885, 785);
