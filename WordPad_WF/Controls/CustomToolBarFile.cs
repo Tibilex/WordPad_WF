@@ -9,11 +9,12 @@ namespace WordPad_WF.Controls
         public CustomButton buttonCreate;
         public CustomButton buttonOpen;
         public CustomButton buttonSave;
-        public CustomButton buttonSaveAS;
+        public CustomButton buttonSaveAs;
         public CustomButton buttonPrint;
         public CustomButton buttonSendMail;
         public CustomButton buttonAbout;
         public CustomButton buttonExit;
+        public RichTextBox fileHistory;
 
         GroupBox groupBox;
         GroupBox groupBox2;
@@ -34,7 +35,7 @@ namespace WordPad_WF.Controls
             groupBox.Controls.Add(buttonCreate = new CustomButton("Создать", new Point(1,8),Properties.Resources.create_40px));
             groupBox.Controls.Add(buttonOpen = new CustomButton("Открыть", new Point(1,50),Properties.Resources.live_folder_40px));
             groupBox.Controls.Add(buttonSave = new CustomButton("Сохранить", new Point(1,92),Properties.Resources.save_40px));
-            groupBox.Controls.Add(buttonSaveAS = new CustomButton("Сохранить как", new Point(1,134),Properties.Resources.save_as_40px));
+            groupBox.Controls.Add(buttonSaveAs = new CustomButton("Сохранить как", new Point(1,134),Properties.Resources.save_as_40px));
 
             groupBox2 = new GroupBox()
             {
@@ -71,15 +72,16 @@ namespace WordPad_WF.Controls
                 Location = new Point(255, 20),
                 Size = new Size(345, 330),
             };
-            groupBox5.Controls.Add(new RichTextBox()
-            {
-                Text = "  ТЕТОВАЯ СТРОКА",
-                Multiline = true,
-                Location = new Point(2, 10),
-                Size = new Size(groupBox5.Width -5, groupBox5.Height - 12),
-                ReadOnly = true,
-                BorderStyle = BorderStyle.None
-            });
+            fileHistory = new RichTextBox();
+
+            fileHistory.Text = "   Вы пока ничего не открывали";
+            fileHistory.Multiline = true;
+            fileHistory.Location = new Point(2, 10);
+            fileHistory.Size = new Size(groupBox5.Width - 5, groupBox5.Height - 12);
+            fileHistory.ReadOnly = true;
+            fileHistory.BorderStyle = BorderStyle.None;
+            //fileHistory.SelectionStart = fileHistory.Text.Length;
+            groupBox5.Controls.Add(fileHistory);
 
             this.Controls.Add(groupBox);
             this.Controls.Add(groupBox2);

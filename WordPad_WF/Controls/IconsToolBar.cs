@@ -49,7 +49,8 @@ namespace WordPad_WF.Controls
                 size = new ToolStripMenuItem("Размер", Properties.Resources.drag_40px),
                 minimize = new ToolStripMenuItem("Свернуть", Properties.Resources.minimize_window_40px),
                 maximize = new ToolStripMenuItem("Развернуть", Properties.Resources.maximize_window_40px),
-                exit = new ToolStripMenuItem("Закрыть", Properties.Resources.close_window_40px),
+                new ToolStripSeparator(),
+                exit = new ToolStripMenuItem("Закрыть     alt+F4", Properties.Resources.close_window_40px),
             });
 
             Items.Add(new ToolStripSeparator());
@@ -87,7 +88,7 @@ namespace WordPad_WF.Controls
             sendMailContext.CheckedChanged += SendMail;
 
             Items.Add(new ToolStripSeparator());
-            Items.Add(name = new ToolStripMenuItem("") { Text = "" });
+            Items.Add(name = new ToolStripMenuItem("") { Text = "Документ - WordPad" });
 
             form.Controls.Add(this);
         }
