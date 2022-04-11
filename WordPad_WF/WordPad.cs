@@ -24,7 +24,7 @@ namespace WordPad_WF
         CustomToolBarFile file = new CustomToolBarFile();
         CustomToolBarMain main = new CustomToolBarMain();
         CustomToolBarView view = new CustomToolBarView();
-        CustomTetxBox CustomTetxBox = new CustomTetxBox();
+        CustomTextBox CustomTextBox = new CustomTextBox();
 
         public WordPad()
         {
@@ -61,9 +61,15 @@ namespace WordPad_WF
             fileToolBar.MouseDown += FileTab;
             MainToolBar.MouseDown += MainTab;
             ViewToolBar.MouseDown += ViewTab;
-            
 
-            this.Controls.Add(CustomTetxBox);
+            CustomTextBox.MouseUp += FontFormat;
+            main.fontBold.Click += BoldFont;
+            main.fontItalic.Click += ItalicFont;
+            main.fontUnderline.Click += UnderlineFont;
+            main.fontName.SelectedIndexChanged += FontName;
+            main.fontSize.SelectedIndexChanged += FontSize;
+
+            this.Controls.Add(CustomTextBox);
             iconsToolBar = new IconsToolBar(this);
             iconsToolBar.open.Click += Open;
             iconsToolBar.save.Click += Save;
@@ -76,6 +82,101 @@ namespace WordPad_WF
             iconsToolBar.maximize.Click += Maximize;
             iconsToolBar.reestablish.Click += Reestablish;
         }
+
+        #region - Font Style -
+        private void FontSize(object sender, EventArgs e)
+        {
+            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
+            float newSize = (float)Convert.ToDouble(main.fontSize.SelectedItem);
+            CustomTextBox.SelectionFont = new Font(SelectedCurrentFont.FontFamily, newSize, SelectedCurrentFont.Style);
+        }
+
+        private void FontName(object sender, EventArgs e)
+        {
+            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
+            CustomTextBox.SelectionFont = new Font(main.fontName.SelectedItem.ToString(), SelectedCurrentFont.Size, SelectedCurrentFont.Style);
+        }
+
+        private void UnderlineFont(object sender, EventArgs e)
+        {
+            if (CustomTextBox.SelectionFont != null)
+            {
+                Font currentFont = CustomTextBox.SelectionFont;
+                FontStyle newFontStyle;
+
+                if (CustomTextBox.SelectionFont.Underline == true)
+                {
+                    newFontStyle = FontStyle.Regular;
+                }
+                else
+                {
+                    newFontStyle = FontStyle.Underline;
+                }
+                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+            }
+        }
+
+        private void ItalicFont(object sender, EventArgs e)
+        {
+            if (CustomTextBox.SelectionFont != null)
+            {
+                Font currentFont = CustomTextBox.SelectionFont;
+                FontStyle newFontStyle;
+
+                if (CustomTextBox.SelectionFont.Italic == true)
+                {
+                    newFontStyle = FontStyle.Regular;
+                }
+                else
+                {
+                    newFontStyle = FontStyle.Italic;
+                }
+                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+            }
+        }
+
+        private void BoldFont(object sender, EventArgs e)
+        {
+            Font currentFont = CustomTextBox.SelectionFont;
+            FontStyle newFontStyle;
+
+            if (CustomTextBox.SelectionFont.Bold == true)
+            {
+                newFontStyle = FontStyle.Regular;
+            }
+            else
+            {
+                newFontStyle = FontStyle.Bold;
+            }
+            CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+        }
+
+        private void FontFormat(object sender, MouseEventArgs e)
+        {
+            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
+            main.fontSize.SelectedItem = SelectedCurrentFont.Size.ToString();
+            main.fontName.SelectedItem = SelectedCurrentFont.Name.ToString();
+            main.fontBold.Checked = false;
+            main.fontItalic.Checked = false;
+            main.fontUnderline.Checked = false;
+            switch (SelectedCurrentFont.Style.ToString())
+            {
+                case "Bold":
+                    main.fontBold.Checked = true;
+                    break;
+                case "Italic":
+                    main.fontItalic.Checked = true;
+                    break;
+                case "Underline":
+                    main.fontUnderline.Checked = true;
+                    break;
+                case "Strikeout":
+                    break;
+                case "Regular":
+                    break;
+            }
+        }
+        #endregion
 
         private void AboutProgram(object sender, EventArgs e)
         {
@@ -125,13 +226,13 @@ namespace WordPad_WF
                 iconsToolBar.name.Text = $"   {Path.GetFileName(openFileDialog.FileName)} - WordPad";
                 file.fileHistory.SelectionStart = file.fileHistory.Text.Length;
                 file.fileHistory.Text = $"   {Path.GetFileName(openFileDialog.FileName)}";
-                CustomTetxBox.Text = File.ReadAllText(openFileDialog.FileName);
+                CustomTextBox.Text = File.ReadAllText(openFileDialog.FileName);
             }
             file.Visible = false;
         }
         private void Create(object sender, EventArgs e)
         {
-            if (CustomTetxBox.Text != "")
+            if (CustomTextBox.Text != "")
             {
                 DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNo);
                 if (DialogResult == DialogResult.Yes)
@@ -139,19 +240,19 @@ namespace WordPad_WF
                     SaveFileDialog();
                 }
             }
-            else { CustomTetxBox.Text = ""; }
+            else { CustomTextBox.Text = ""; }
             file.Visible = false;
         }
         private void Save(object sender, EventArgs e)
         {          
-            if (CustomTetxBox.Text != "")
+            if (CustomTextBox.Text != "")
             {
                 string path = openFileDialog.FileName;
                 if (path != "")
                 {
-                    File.WriteAllText(path, CustomTetxBox.Text);
+                    File.WriteAllText(path, CustomTextBox.Text);
                     string[] array = path.Split('\\');
-                    CustomTetxBox.Text = array[array.Length - 1];
+                    CustomTextBox.Text = array[array.Length - 1];
                 }
             }
             file.Visible = false;
@@ -192,7 +293,7 @@ namespace WordPad_WF
         }
         private void SaveFileDialog()
         {
-            if (CustomTetxBox.Text != "")
+            if (CustomTextBox.Text != "")
             {
                 saveFileDialog.Filter = "Файл RTF (*.rtf)|*.rtf|" +
                 "Текстовый документ (*.txt)|*.txt|" +
@@ -203,9 +304,9 @@ namespace WordPad_WF
                 string path = saveFileDialog.FileName;
                 if (path != "")
                 {
-                    File.WriteAllText(path, CustomTetxBox.Text);
+                    File.WriteAllText(path, CustomTextBox.Text);
                     string[] array = path.Split('\\');
-                    CustomTetxBox.Text = array[array.Length - 1];
+                    CustomTextBox.Text = array[array.Length - 1];
                 }
                 saveFileDialog.Reset();
             }

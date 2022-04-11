@@ -13,7 +13,7 @@ namespace WordPad_WF.Controls
         GroupBox insertSector;
         GroupBox editingSector;
 
-        public ComboBox fontType;
+        public ComboBox fontName;
         public ComboBox fontSize;
 
         public CheckBox fontBold;
@@ -66,10 +66,10 @@ namespace WordPad_WF.Controls
                 Location = new Point(95, this.Height - 11)
             });
 
-            fontType = new ComboBox();
-            fontType.Items.AddRange(FontFamily.Families.Select(f => f.Name).ToArray());
-            fontType.Location = new Point(8, 20);
-            fontType.SelectedItem = "Calibri";
+            fontName = new ComboBox();
+            fontName.Items.AddRange(FontFamily.Families.Select(f => f.Name).ToArray());
+            fontName.Location = new Point(8, 20);
+            fontName.SelectedItem = "Calibri";
 
             fontSize = new ComboBox();
             string[] FontSize = new string[] { "8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72" };
@@ -151,7 +151,7 @@ namespace WordPad_WF.Controls
             textSelectionСolor.BackgroundImage = Properties.Resources.crayon_20px;
             textSelectionСolor.BackgroundImageLayout = ImageLayout.Stretch;
 
-            fontSector.Controls.Add(fontType);
+            fontSector.Controls.Add(fontName);
             fontSector.Controls.Add(fontSize);
             fontSector.Controls.Add(fontSizeUp);
             fontSector.Controls.Add(fontSizeDown);
@@ -192,7 +192,7 @@ namespace WordPad_WF.Controls
                 AutoSize = false,
                 Size = new Size(100, 15),
                 Text = "Вставка",
-                Location = new Point(95, this.Height - 11)
+                Location = new Point(96, this.Height - 11)
             });
             #endregion
 
