@@ -58,6 +58,9 @@
     <Compile Include="Controls\CustomToolBarMain.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CustomToolBarView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\IconsToolBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -148,6 +151,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\expand_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crayon_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decrease_font_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increase_font_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strikethrough_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subscript_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_color_20px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,7 @@ namespace WordPad_WF
         MenuStrip menuStrip = new MenuStrip();
         CustomToolBarFile file = new CustomToolBarFile();
         CustomToolBarMain main = new CustomToolBarMain();
+        CustomToolBarView view = new CustomToolBarView();
 
         public WordPad()
         {
@@ -36,18 +37,37 @@ namespace WordPad_WF
 
             Controls.Add(file);
             Controls.Add(main);
+            Controls.Add(view);
+
             file.Visible = false;
+            main.Visible = true;
+            view.Visible = false;
+
             file.buttonExit.Click += Exit;
             fileToolBar.MouseDown += FileTab;
+            MainToolBar.MouseDown += MainTab;
+            ViewToolBar.MouseDown += ViewTab;
 
             iconsToolBar = new IconsToolBar(this);
             iconsToolBar.open.Click += Open;
             iconsToolBar.save.Click += Save;
             iconsToolBar.undo.Click += Undo;
             iconsToolBar.redo.Click += Redo;
+            iconsToolBar.exit.Click += Exit;
 
         }
 
+        private void ViewTab(object sender, MouseEventArgs e)
+        {
+            main.Visible = false;
+            view.Visible = true;              
+        }
+
+        private void MainTab(object sender, MouseEventArgs e)
+        {
+            main.Visible = true;
+            view.Visible = false;
+        }
 
         private void FileTab(object sender, EventArgs e)
         {
@@ -55,10 +75,7 @@ namespace WordPad_WF
             {
                 file.Visible = false;
             }
-            else
-            {
-                file.Visible = true;
-            }
+            else { file.Visible = true; }
         }
 
         private void Open(object sender, EventArgs e)
@@ -98,7 +115,17 @@ namespace WordPad_WF
         }
         private void Exit(object sender, EventArgs e)
         {
-            this.Close();
+
+            DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
+            if (DialogResult == DialogResult.Yes) 
+            { 
+                saveFileDialog.Filter = "Файл RTF (*.rtf)|*.rtf|" +
+                    "Текстовый документ (*.txt)|*.txt|" +
+                    "Документ Office Open XML (*.docx)|*.docx|" +
+                    "Документ OpenDocument (*.odt)|*.odt";
+                saveFileDialog.ShowDialog();
+            }
+            if (DialogResult == DialogResult.No) { this.Close(); }
         }
 
     }
