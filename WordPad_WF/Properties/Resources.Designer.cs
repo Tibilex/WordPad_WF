@@ -87,9 +87,69 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap align_center_20px {
+            get {
+                object obj = ResourceManager.GetObject("align_center_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap align_justify_20px {
+            get {
+                object obj = ResourceManager.GetObject("align_justify_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap align_left_20px {
+            get {
+                object obj = ResourceManager.GetObject("align_left_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap align_right_20px {
+            get {
+                object obj = ResourceManager.GetObject("align_right_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bino_40px {
+            get {
+                object obj = ResourceManager.GetObject("bino_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bold_20px {
             get {
                 object obj = ResourceManager.GetObject("bold_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checklist_20px {
+            get {
+                object obj = ResourceManager.GetObject("checklist_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +296,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap indent_20px {
+            get {
+                object obj = ResourceManager.GetObject("indent_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info_40px {
             get {
                 object obj = ResourceManager.GetObject("info_40px", resourceCulture);
@@ -306,9 +376,59 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap objects_40px {
+            get {
+                object obj = ResourceManager.GetObject("objects_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outdent_20px {
+            get {
+                object obj = ResourceManager.GetObject("outdent_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paint_palette_64px {
+            get {
+                object obj = ResourceManager.GetObject("paint_palette_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paragraph_20px {
+            get {
+                object obj = ResourceManager.GetObject("paragraph_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paste_64px {
             get {
                 object obj = ResourceManager.GetObject("paste_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picture_64px {
+            get {
+                object obj = ResourceManager.GetObject("picture_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -339,6 +459,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap redo_40px {
             get {
                 object obj = ResourceManager.GetObject("redo_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap replace_64px {
+            get {
+                object obj = ResourceManager.GetObject("replace_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -379,6 +509,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap save_as_40px {
             get {
                 object obj = ResourceManager.GetObject("save_as_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap select_all_64px {
+            get {
+                object obj = ResourceManager.GetObject("select_all_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +596,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap timetable_64px {
+            get {
+                object obj = ResourceManager.GetObject("timetable_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap txt_64px {
             get {
                 object obj = ResourceManager.GetObject("txt_64px", resourceCulture);
@@ -479,6 +629,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap undo_40px {
             get {
                 object obj = ResourceManager.GetObject("undo_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap up_down_arrow_20px {
+            get {
+                object obj = ResourceManager.GetObject("up_down_arrow_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
