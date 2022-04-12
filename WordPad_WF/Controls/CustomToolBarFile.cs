@@ -37,6 +37,7 @@ namespace WordPad_WF.Controls
         {
             this.Location = new Point(0, 54);
             this.Size = new Size(508, 350);
+            this.BackColor = SystemColors.MenuBar;
 
             mainOptions = new GroupBox()
             {
@@ -51,7 +52,7 @@ namespace WordPad_WF.Controls
 
             printMailOptions = new GroupBox()
             {
-                Location = new Point(4, mainOptions.Height - 12),
+                Location = new Point(4, mainOptions.Height - 13),
                 Size = new Size(252, 94),
             };
             printMailOptions.Controls.Add(buttonPrint = new CustomButton("Печать", new Point(1, 8), Properties.Resources.print_40px));

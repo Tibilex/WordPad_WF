@@ -78,6 +78,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
             this.HelpButton = true;
             this.Name = "AboutProgramForm";
             this.Text = "AboutProgramForm";
