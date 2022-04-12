@@ -83,9 +83,9 @@ namespace WordPad_WF
 
             CustomTextBox.MouseUp += FontFormat;
 
-            main.cut.Click += Cut;
-            main.copy.Click += Copy;
-            main.paste.Click += Paste;
+            main.buttonCut.Click += Cut;
+            main.buttonCopy.Click += Copy;
+            main.buttonPaste.Click += Paste;
             main.fontBold.Click += BoldFont;
             main.fontItalic.Click += ItalicFont;
             main.fontUnderline.Click += UnderlineFont;

@@ -124,8 +124,26 @@
   <data name="aboutFormName" xml:space="preserve">
     <value>About programm</value>
   </data>
+  <data name="align_center_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\align_center_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="align_justify_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\align_justify_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="align_left_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\align_left_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="align_right_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\align_right_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bino_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bino_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bold_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bold_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checklist_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checklist_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +187,9 @@
   <data name="increase_font_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\increase_font_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="indent_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\indent_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +211,23 @@
   <data name="minimize_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimize_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="objects_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\objects_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="outdent_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outdent_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paint_palette_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paint_palette_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paragraph_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paragraph_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="paste_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paste_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picture_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picture_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -201,6 +237,9 @@
   </data>
   <data name="redo_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redo_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replace_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replace_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restore_down_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore_down_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,6 +252,9 @@
   </data>
   <data name="save_as_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_as_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="select_all_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\select_all_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send_email_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\send_email_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +277,9 @@
   <data name="text_color_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text_color_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="timetable_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\timetable_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="txt_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\txt_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,6 +288,9 @@
   </data>
   <data name="undo_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up_down_arrow_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up_down_arrow_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="windows_10_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\windows_10_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
