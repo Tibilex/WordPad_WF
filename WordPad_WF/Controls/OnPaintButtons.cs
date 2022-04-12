@@ -5,16 +5,25 @@ using System.Windows.Forms;
 
 namespace WordPad_WF.Controls
 {
-    class FormCloseMinimizeButtons : Control
+    class OnPaintButtons : Control
     {
         StringFormat _format = new StringFormat();
         bool MouseEntered = false;
         bool MousePressed = false;
         Image image;
         Point point;
-        Color color;
+        public Color color;
+        Size size;
+        int X;
+        int Y;
+        int width;
+        int height;
+        int fontIndentX;
+        int fontIndentY;
+        int fontSizeX;
+        int fontSizeY;
 
-        public FormCloseMinimizeButtons(Point point, Image image, Color color)
+        public OnPaintButtons()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer |
@@ -23,16 +32,39 @@ namespace WordPad_WF.Controls
                 ControlStyles.UserPaint, true);
             DoubleBuffered = true;
 
-            this.image = image;
-            this.point = point;
-            this.color = color;
-            this.Location = point;
-            this.Size = new Size(44, 32);            
+            this.Size = new Size(44, 32);
             this.BackColor = SystemColors.ControlLightLight;
-            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom  | AnchorStyles.Right;
+            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             _format.Alignment = StringAlignment.Near;
             _format.LineAlignment = StringAlignment.Center;
         }
+        //public OnPaintButtons(Point point, Image image, Color color,Size size, int X, int Y, int width, int height) : this()
+        //{
+        //    this.image = image;
+        //    this.color = color;
+        //    this.width = width;
+        //    this.height = height;
+        //    this.X = X;
+        //    this.Y = Y;
+        //    this.Size = size;
+        //    this.Location = point;
+        //}
+
+        public OnPaintButtons(Point point, Image image, Size size, int X, int Y, int width, int height, int indentX, int indentY, int fontSizeX, int fontSizeY) : this()
+        {
+            this.image = image;
+            this.width = width;
+            this.height = height;
+            this.fontIndentX = indentX;
+            this.fontIndentY = indentY;
+            this.fontSizeX = fontSizeX;
+            this.fontSizeY = fontSizeY;
+            this.X = X;
+            this.Y = Y;
+            this.Size = size;
+            this.Location = point;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -41,8 +73,8 @@ namespace WordPad_WF.Controls
             graphic.Clear(this.BackColor);
 
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
-            Rectangle rectText = new Rectangle(60, 0, Width - 1, Height - 1);
-            Rectangle rectImage = new Rectangle(13, 8, 16, 16);
+            Rectangle rectText = new Rectangle(fontIndentX, fontIndentY, fontSizeX - 1, fontSizeY - 1);
+            Rectangle rectImage = new Rectangle(X, Y, width, height);
 
             graphic.DrawImage(image, rectImage);
             graphic.DrawRectangle(new Pen(this.BackColor), rect);

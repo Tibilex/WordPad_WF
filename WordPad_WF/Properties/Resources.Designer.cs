@@ -127,6 +127,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy_64px {
+            get {
+                object obj = ResourceManager.GetObject("copy_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap crayon_20px {
             get {
                 object obj = ResourceManager.GetObject("crayon_20px", resourceCulture);
@@ -140,6 +150,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap create_40px {
             get {
                 object obj = ResourceManager.GetObject("create_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cut_40px {
+            get {
+                object obj = ResourceManager.GetObject("cut_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -279,6 +299,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap minimize_window_40px {
             get {
                 object obj = ResourceManager.GetObject("minimize_window_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paste_64px {
+            get {
+                object obj = ResourceManager.GetObject("paste_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
