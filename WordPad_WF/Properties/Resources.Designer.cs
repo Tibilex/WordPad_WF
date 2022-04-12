@@ -97,6 +97,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_24px {
+            get {
+                object obj = ResourceManager.GetObject("Close_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_window_40px {
             get {
                 object obj = ResourceManager.GetObject("close_window_40px", resourceCulture);
@@ -246,6 +256,16 @@ namespace WordPad_WF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximize_button_24px {
+            get {
+                object obj = ResourceManager.GetObject("maximize_button_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize_window_40px {
             get {
                 object obj = ResourceManager.GetObject("maximize_window_40px", resourceCulture);
@@ -289,6 +309,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap redo_40px {
             get {
                 object obj = ResourceManager.GetObject("redo_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restore_down_24px {
+            get {
+                object obj = ResourceManager.GetObject("restore_down_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -359,6 +389,16 @@ namespace WordPad_WF.Properties {
         internal static System.Drawing.Bitmap subscript_20px {
             get {
                 object obj = ResourceManager.GetObject("subscript_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subtract_24px {
+            get {
+                object obj = ResourceManager.GetObject("subtract_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

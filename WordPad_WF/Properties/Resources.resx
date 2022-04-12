@@ -127,6 +127,9 @@
   <data name="bold_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bold_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Close_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,6 +175,9 @@
   <data name="Logout_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logout_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="maximize_button_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximize_button_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maximize_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximize_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +192,9 @@
   </data>
   <data name="redo_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redo_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restore_down_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore_down_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restore_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,6 +216,9 @@
   </data>
   <data name="subscript_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subscript_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subtract_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subtract_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="superscript_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superscript_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -20,6 +20,10 @@ namespace WordPad_WF
         ToolStripMenuItem MainToolBar;
         ToolStripMenuItem ViewToolBar;
         AboutProgramForm aboutProgramForm;
+        FormCloseMinimizeButtons closeWindow;
+        FormCloseMinimizeButtons minimizeWindow;
+        FormCloseMinimizeButtons maximazeWindow;
+        FormCloseMinimizeButtons ReestablishWindow;
 
         MenuStrip menuStrip = new MenuStrip();
         CustomToolBarFile file = new CustomToolBarFile();
@@ -38,10 +42,11 @@ namespace WordPad_WF
             this.Name = Properties.Resources.formName;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Size = new Size(1000, 1000);
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
         private void WordPad_Load(object sender, EventArgs e)
         {
+            this.MouseDown += FormDrag;
             this.Controls.Add(menuStrip);
             menuStrip.Items.Add(fileToolBar = new ToolStripMenuItem("Файл") { BackColor = Color.FromArgb(0, 128, 204), ForeColor = Color.White });
             menuStrip.Items.Add(MainToolBar = new ToolStripMenuItem("Главная") { Padding = new Padding(1, 1, 1, 3) });
@@ -54,6 +59,7 @@ namespace WordPad_WF
             file.Visible = false;
             main.Visible = true;
             view.Visible = false;
+
 
             file.buttonOpen.Click += Open;
             file.buttonCreate.Click += Create;
@@ -89,7 +95,21 @@ namespace WordPad_WF
             main.fontSizeUp.Click += FontSizeUp;
             main.fontSizeDown.Click += FontSizeDown;
 
+            this.Controls.Add(closeWindow = new FormCloseMinimizeButtons(new Point(this.Width - 44, -2),
+                Properties.Resources.Close_24px, Color.Red)) ;
+            this.Controls.Add(maximazeWindow = new FormCloseMinimizeButtons(new Point(this.Width - 90, -2),
+                Properties.Resources.maximize_button_24px, SystemColors.ControlLightLight));
+            this.Controls.Add(ReestablishWindow = new FormCloseMinimizeButtons(new Point(this.Width - 90, -2),
+                Properties.Resources.restore_down_24px, SystemColors.ControlLightLight));
+            this.Controls.Add(minimizeWindow = new FormCloseMinimizeButtons(new Point(this.Width - 136, -2),
+                Properties.Resources.subtract_24px, SystemColors.ControlLightLight));
+            closeWindow.Click += Exit;
+            minimizeWindow.Click += Minimize;
+            maximazeWindow.Click += ReestablishMainWondow;
+            ReestablishWindow.Click += ReestablishMainWondow;
+
             iconsToolBar = new IconsToolBar(this);
+            iconsToolBar.MouseDown += FormDrag;
             iconsToolBar.open.Click += Open;
             iconsToolBar.save.Click += Save;
             iconsToolBar.undo.Click += Undo;
@@ -104,8 +124,15 @@ namespace WordPad_WF
             this.Controls.Add(CustomTextBox);
         }
 
-        #region - Events -
 
+        #region - Events -
+        // Move form event
+        private void FormDrag(object sender, MouseEventArgs e)
+        {
+            base.Capture = false;
+            Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+            this.WndProc(ref m);
+        }
         #region - Font Style -
 
         // font size up combobox event
@@ -288,7 +315,22 @@ namespace WordPad_WF
             file.Visible = false;
         }
 
-        private void Reestablish(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal; }      
+        private void Reestablish(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal;}        
+        private void ReestablishMainWondow(object sender, EventArgs e) 
+        {
+            if (maximazeWindow.Visible == true)
+            {
+                maximazeWindow.Visible = false;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (ReestablishWindow.Visible == true)
+            {
+                ReestablishWindow.Visible = false;
+                maximazeWindow.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+            }
+            ReestablishWindow.Visible = true;
+        }        
         private void Maximize(object sender, EventArgs e) { this.WindowState = FormWindowState.Maximized; }
         private void Minimize(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized; }
 
@@ -380,13 +422,17 @@ namespace WordPad_WF
         }
         private void Exit(object sender, EventArgs e)
         {
-            SendKeys.SendWait("%{F4}");
-            DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
-            if (DialogResult == DialogResult.Yes)
+            if (CustomTextBox.Text != "")
             {
-                SaveFileDialog(fileFormatFilter);
+                SendKeys.SendWait("%{F4}");
+                DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    SaveFileDialog(fileFormatFilter);
+                }
+                if (DialogResult == DialogResult.No) { this.Close(); }
             }
-            if (DialogResult == DialogResult.No) { this.Close(); }
+            this.Close();
         }
 
         #endregion

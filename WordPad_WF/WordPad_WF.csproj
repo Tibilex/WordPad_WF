@@ -67,6 +67,9 @@
     <Compile Include="Controls\CustomToolBarView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\FormCloseMinimizeButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\IconsToolBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -214,6 +217,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\xml_file_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtract_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_button_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_down_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,8 +36,7 @@ namespace WordPad_WF.Controls
         {
             this.Location = new Point(0, 54);
             this.Size = new Size(1000, 100);
-            this.BackColor = Color.FromArgb(235, 235, 235);
-            //this.BackColor = Color.Gray;
+            this.BackColor = SystemColors.ControlLightLight;
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
             #region - Buffer Sector -

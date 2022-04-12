@@ -5,14 +5,16 @@ using System.Windows.Forms;
 
 namespace WordPad_WF.Controls
 {
-    class CustomButton : Control
+    class FormCloseMinimizeButtons : Control
     {
         StringFormat _format = new StringFormat();
-        private bool MouseEntered = false;
-        private bool MousePressed = false;
-        private Image image;
+        bool MouseEntered = false;
+        bool MousePressed = false;
+        Image image;
+        Point point;
+        Color color;
 
-        public CustomButton(string text, Point point, Image image)
+        public FormCloseMinimizeButtons(Point point, Image image, Color color)
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer |
@@ -22,12 +24,12 @@ namespace WordPad_WF.Controls
             DoubleBuffered = true;
 
             this.image = image;
+            this.point = point;
+            this.color = color;
             this.Location = point;
-            this.Text = text;
-            this.Size = new Size(250, 42);
-            this.ForeColor = Color.Black;
-            this.Font = new Font("Arial", 9F, FontStyle.Regular);
-            this.BackColor = Color.White;
+            this.Size = new Size(44, 32);            
+            this.BackColor = SystemColors.ControlLightLight;
+            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom  | AnchorStyles.Right;
             _format.Alignment = StringAlignment.Near;
             _format.LineAlignment = StringAlignment.Center;
         }
@@ -36,13 +38,13 @@ namespace WordPad_WF.Controls
             base.OnPaint(e);
             Graphics graphic = e.Graphics;
             graphic.SmoothingMode = SmoothingMode.HighQuality;
-            graphic.Clear(this.BackColor); 
+            graphic.Clear(this.BackColor);
 
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
             Rectangle rectText = new Rectangle(60, 0, Width - 1, Height - 1);
-            Rectangle rectimage = new Rectangle(10, 2, 36, 36);
+            Rectangle rectImage = new Rectangle(13, 8, 16, 16);
 
-            graphic.DrawImage(image, rectimage);
+            graphic.DrawImage(image, rectImage);
             graphic.DrawRectangle(new Pen(this.BackColor), rect);
             graphic.FillRectangle(new SolidBrush(this.BackColor), rectText);
             graphic.DrawString(this.Text, this.Font, new SolidBrush(ForeColor), rectText, _format);
@@ -58,11 +60,11 @@ namespace WordPad_WF.Controls
                 graphic.DrawRectangle(new Pen(Color.FromArgb(60, Color.FromArgb(0, 128, 204))), rect);
                 graphic.FillRectangle(new SolidBrush(Color.FromArgb(60, Color.Black)), rect);
             }
-
         }
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
+            this.BackColor = color;
             MouseEntered = true;
             Invalidate();
         }
@@ -70,6 +72,7 @@ namespace WordPad_WF.Controls
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
+            this.BackColor = SystemColors.ControlLightLight;
             MouseEntered = false;
             Invalidate();
         }

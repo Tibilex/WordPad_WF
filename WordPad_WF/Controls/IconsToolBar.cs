@@ -6,7 +6,7 @@ namespace WordPad_WF.Controls
 {
     class IconsToolBar : MenuStrip
     {
-        #region - Objects - 
+        #region - Objects -       
 
         ToolStripMenuItem window;
         public ToolStripMenuItem reestablish;
