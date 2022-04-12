@@ -136,11 +136,17 @@
   <data name="code_fork_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\code_fork_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="copy_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="crayon_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crayon_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="create_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\create_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cut_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cut_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="decrease_font_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\decrease_font_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,6 +189,9 @@
   </data>
   <data name="minimize_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimize_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paste_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paste_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

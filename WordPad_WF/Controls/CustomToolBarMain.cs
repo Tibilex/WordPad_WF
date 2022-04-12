@@ -30,6 +30,10 @@ namespace WordPad_WF.Controls
         public Button fontColor;
         public Button textSelectionСolor;
 
+        public OnPaintButtons paste;
+        public OnPaintButtons copy;
+        public OnPaintButtons cut;
+
         #endregion
 
         public CustomToolBarMain()
@@ -52,6 +56,20 @@ namespace WordPad_WF.Controls
                 Text = "Буфер обмена",
                 Location = new Point(40, this.Height - 11)
             });
+
+            paste = new OnPaintButtons(new Point(8, 12), Properties.Resources.paste_64px, new Size(50, 70), 4, 4, 40, 40, 0, 48, 54, 20);
+            paste.Text = "Вставить";
+
+            cut = new OnPaintButtons(new Point(64, 14), Properties.Resources.cut_40px, new Size(80, 20), 2, 1, 18, 18, 24, 0, 80, 20);
+            cut.Text = "Вырезать";
+
+            copy = new OnPaintButtons(new Point(64, 38), Properties.Resources.copy_64px, new Size(88, 20), 2, 1, 18, 18, 24, 0, 88, 20);
+            copy.Text = "Копировать";
+
+
+            bufferSector.Controls.Add(paste);
+            bufferSector.Controls.Add(cut);
+            bufferSector.Controls.Add(copy);
             #endregion
 
             #region - Font Sector - 

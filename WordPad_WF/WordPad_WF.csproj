@@ -67,7 +67,7 @@
     <Compile Include="Controls\CustomToolBarView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\FormCloseMinimizeButtons.cs">
+    <Compile Include="Controls\OnPaintButtons.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\IconsToolBar.cs">
@@ -229,6 +229,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\restore_down_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
