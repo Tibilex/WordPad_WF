@@ -196,6 +196,12 @@
   <data name="italic_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\italic_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="length_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\length_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lipids_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lipids_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="live_folder_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\live_folder_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -210,6 +216,9 @@
   </data>
   <data name="minimize_window_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimize_window_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="navigation_toolbar_bottom_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation_toolbar_bottom_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="objects_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\objects_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,11 +283,17 @@
   <data name="superscript_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superscript_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="surface_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\surface_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="text_color_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text_color_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="timetable_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timetable_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transfer_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="txt_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\txt_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -297,5 +312,11 @@
   </data>
   <data name="xml_file_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xml_file_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_in_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_in_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_out_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_out_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

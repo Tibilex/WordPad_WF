@@ -314,5 +314,26 @@
   <ItemGroup>
     <None Include="Resources\up_down_arrow_20px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lipids_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surface_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\length_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation_toolbar_bottom_64px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
