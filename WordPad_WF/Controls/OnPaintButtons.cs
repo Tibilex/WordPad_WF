@@ -7,6 +7,7 @@ namespace WordPad_WF.Controls
 {
     class OnPaintButtons : Control
     {
+        #region - Fields & objects -
         StringFormat _format = new StringFormat();
         bool MouseEntered = false;
         bool MousePressed = false;
@@ -22,7 +23,9 @@ namespace WordPad_WF.Controls
         int fontIndentY;
         int fontSizeX;
         int fontSizeY;
+        #endregion
 
+        #region - Constructors -
         public OnPaintButtons()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
@@ -38,17 +41,6 @@ namespace WordPad_WF.Controls
             _format.Alignment = StringAlignment.Near;
             _format.LineAlignment = StringAlignment.Center;
         }
-        //public OnPaintButtons(Point point, Image image, Color color,Size size, int X, int Y, int width, int height) : this()
-        //{
-        //    this.image = image;
-        //    this.color = color;
-        //    this.width = width;
-        //    this.height = height;
-        //    this.X = X;
-        //    this.Y = Y;
-        //    this.Size = size;
-        //    this.Location = point;
-        //}
 
         public OnPaintButtons(Point point, Image image, Size size, int X, int Y, int width, int height, int indentX, int indentY, int fontSizeX, int fontSizeY) : this()
         {
@@ -64,7 +56,9 @@ namespace WordPad_WF.Controls
             this.Size = size;
             this.Location = point;
         }
+        #endregion
 
+        #region - Events & Methods -
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -92,6 +86,19 @@ namespace WordPad_WF.Controls
                 graphic.DrawRectangle(new Pen(Color.FromArgb(60, Color.FromArgb(0, 128, 204))), rect);
                 graphic.FillRectangle(new SolidBrush(Color.FromArgb(60, Color.Black)), rect);
             }
+            if (!Enabled)
+            {
+                graphic.DrawRectangle(new Pen(Color.FromArgb(50, Color.White)), rect);
+                graphic.FillRectangle(new SolidBrush(Color.FromArgb(50, Color.White)), rect);
+                ForeColor = Color.DarkGray;
+            }
+            else
+            {
+                graphic.DrawRectangle(new Pen(Color.FromArgb(50, Color.White)), rect);
+                graphic.FillRectangle(new SolidBrush(Color.FromArgb(50, Color.White)), rect);
+                ForeColor = Color.Black;
+            }
+
         }
         protected override void OnMouseEnter(EventArgs e)
         {
@@ -121,5 +128,6 @@ namespace WordPad_WF.Controls
             MousePressed = false;
             Invalidate();
         }
+        #endregion
     }
 }

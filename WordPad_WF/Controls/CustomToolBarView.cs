@@ -6,6 +6,7 @@ namespace WordPad_WF.Controls
 {
     internal class CustomToolBarView : Panel
     {
+        #region - Objects - 
         GroupBox scaleSector;
         GroupBox showHideSector;
         GroupBox optionsSector;
@@ -31,6 +32,7 @@ namespace WordPad_WF.Controls
 
         public CheckBox ruler;
         public CheckBox statusBar;
+        #endregion
 
         public CustomToolBarView()
         {

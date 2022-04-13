@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-
 
 namespace WordPad_WF
 {
@@ -31,12 +31,13 @@ namespace WordPad_WF
 
         private void Link(object sender, LinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Tibilex/WordPad_WF/tree/work");
+            Process.Start("https://github.com/Tibilex/WordPad_WF/tree/work");
         }
 
         private void Ok(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

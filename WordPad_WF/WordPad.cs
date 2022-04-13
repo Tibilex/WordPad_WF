@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
@@ -9,6 +10,7 @@ namespace WordPad_WF
 {
     public partial class WordPad : Form
     {
+        #region - Objects & Fields -
         OpenFileDialog openFileDialog = new OpenFileDialog();
         SaveFileDialog saveFileDialog = new SaveFileDialog();
         PrintDialog printDialog = new PrintDialog();
@@ -31,11 +33,26 @@ namespace WordPad_WF
         CustomToolBarView view = new CustomToolBarView();
         CustomTextBox CustomTextBox = new CustomTextBox();
 
+        const int cGrip = 16;
+        const int cCaption = 32;
         string fileFormatFilter = "Файл RTF (*.rtf)|*.rtf|" +
                 "Текстовый документ (*.txt)|*.txt|" +
                 "Документ Office Open XML (*.docx)|*.docx|" +
                 "Документ OpenDocument (*.odt)|*.odt";
+        string imageFormatFilter = 
+            $"Все файлы изображений (*.BMP,*.DIB,*.RLE,*.JPG,*.JPEG,*.JPE,*.JFIF,*.GIF,*.EMF,*.WMF,*.TIFF,*.PNG,*.ICO)|*.bmp;*.dib;*.rle;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.emf;*.wmf;*.tiff;*.png;*.ico|" +
+            "BMP (*.BMP,*.DIB,*.RLE)|*.bmp;*.dib;*.rle|" +
+            "JPEG (*.JPG,*.JPEG,*.JPE,*.JFIF)|*.jpg;*.jpeg;*.jpe;*.jfif|" +
+            "GIF (*.GIF)|*.gif|" + 
+            "EMF (*.EMF)|*.emf|" + 
+            "WMF (*.WMF)|*.wmf|" +
+            "TIFF (*.TIFF)|*.tiff|" + 
+            "PNG (*.PNG)|*.png|" + 
+            "ICO (*.ICO)|*.ico|" + 
+            "Все файлы (*.*)|*.*";
+        #endregion
 
+        #region - Form load - 
         public WordPad()
         {
             InitializeComponent();
@@ -43,6 +60,8 @@ namespace WordPad_WF
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Size = new Size(1000, 1000);
             this.FormBorderStyle = FormBorderStyle.None;
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
         private void WordPad_Load(object sender, EventArgs e)
         {
@@ -60,7 +79,7 @@ namespace WordPad_WF
             main.Visible = true;
             view.Visible = false;
 
-
+            // Tab "File"
             file.buttonOpen.Click += Open;
             file.buttonCreate.Click += Create;
             file.buttonSave.Click += Save;
@@ -83,6 +102,7 @@ namespace WordPad_WF
 
             CustomTextBox.MouseUp += FontFormat;
 
+            // Tab "Main"
             main.buttonCut.Click += Cut;
             main.buttonCopy.Click += Copy;
             main.buttonPaste.Click += Paste;
@@ -98,9 +118,23 @@ namespace WordPad_WF
             main.textSelectionСolor.Click += TextSelectedColor;
             main.fontSizeUp.Click += FontSizeUp;
             main.fontSizeDown.Click += FontSizeDown;
+            main.buttonPaint.Click += OpenPaint;
+            main.buttonPicture.Click += OpenImage;
+            main.buttonSelectAll.Click += SelectAll;
+            main.buttonSearch.Click += Search;
+            main.buttonRepalace.Click += Replace;
+            main.alignLeft.Click += AlignLeft;
+            main.alignCenter.Click += AlignCenter;
+            main.alignRight.Click += AlignRight;
+            main.indent.Click += Indent;
+            main.outdent.Click += Outdent;
 
+            view.buttonZoomUp.Click += ZoomUp;
+            view.buttonZoomDown.Click += ZoomDown;
+
+            //Close, Minimize, Maximaze, Restore buttons
             this.Controls.Add(closeWindow = new OnPaintButtons(new Point(this.Width - 44, -2),
-                Properties.Resources.Close_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32)) ;
+                Properties.Resources.Close_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
             this.Controls.Add(maximazeWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
                 Properties.Resources.maximize_button_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
             this.Controls.Add(ReestablishWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
@@ -113,6 +147,7 @@ namespace WordPad_WF
             maximazeWindow.Click += ReestablishMainWondow;
             ReestablishWindow.Click += ReestablishMainWondow;
 
+            // Icon toolbar in left corner of the screen
             iconsToolBar = new IconsToolBar(this);
             iconsToolBar.MouseDown += FormDrag;
             iconsToolBar.open.Click += Open;
@@ -129,10 +164,16 @@ namespace WordPad_WF
             this.Controls.Add(CustomTextBox);
         }
 
+        #endregion
+
         #region - Events -
 
         #region - Font Style events -
-
+        private void Outdent(object sender, EventArgs e) { AlignText(5); }
+        private void Indent(object sender, EventArgs e) { AlignText(4); }
+        private void AlignLeft(object sender, EventArgs e) { AlignText(1); }
+        private void AlignCenter(object sender, EventArgs e) { AlignText(2); }
+        private void AlignRight(object sender, EventArgs e) { AlignText(3); }
         // font size up combobox event
         private void FontSizeUp(object sender, EventArgs e)
         {
@@ -164,7 +205,7 @@ namespace WordPad_WF
             DialogResult = ColorDialog.ShowDialog(this);
             if (DialogResult == DialogResult.OK)
             {
-                CustomTextBox.ForeColor = ColorDialog.Color;
+                CustomTextBox.SelectionColor = ColorDialog.Color;
             }
         }
         // Font Size event
@@ -292,7 +333,26 @@ namespace WordPad_WF
         #endregion
 
         #region - Form events -
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x84)
+            {
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos);
+                if (pos.Y < cCaption)
+                {
+                    m.Result = (IntPtr)2;
+                    return;
+                }
 
+                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                {
+                    m.Result = (IntPtr)17;
+                    return;
+                }
+            }
+            base.WndProc(ref m);
+        }
         private void FormDrag(object sender, MouseEventArgs e)
         {
             base.Capture = false;
@@ -321,8 +381,8 @@ namespace WordPad_WF
             file.Visible = false;
         }
 
-        private void Reestablish(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal;}        
-        private void ReestablishMainWondow(object sender, EventArgs e) 
+        private void Reestablish(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal;}
+        private void ReestablishMainWondow(object sender, EventArgs e)
         {
             if (maximazeWindow.Visible == true)
             {
@@ -336,7 +396,7 @@ namespace WordPad_WF
                 this.WindowState = FormWindowState.Normal;
             }
             ReestablishWindow.Visible = true;
-        }        
+        }
         private void Maximize(object sender, EventArgs e) { this.WindowState = FormWindowState.Maximized; }
         private void Minimize(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized; }
 
@@ -377,6 +437,45 @@ namespace WordPad_WF
         #endregion
 
         #region - Tools events -
+        private void ZoomUp(object sender, EventArgs e)
+        {
+
+        }
+        private void ZoomDown(object sender, EventArgs e)
+        {
+
+        }
+        private void Search(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Replace(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SelectAll(object sender, EventArgs e) { SendKeys.Send("^a"); }
+        private void OpenPaint(object sender, EventArgs e)
+        {
+            
+        }
+        private void OpenImage(object sender, EventArgs e)
+        {
+
+            openFileDialog.Filter = imageFormatFilter;
+            openFileDialog.ShowDialog();
+            string fileNameCheck = openFileDialog.FileName;
+
+            if (!String.IsNullOrEmpty(fileNameCheck))
+            {
+                Image img = Image.FromFile(openFileDialog.FileName);
+                Clipboard.Clear();
+                Clipboard.SetImage(img);
+                CustomTextBox.Paste();
+                Clipboard.Clear();
+            }
+        }
         private void Cut(object sender, EventArgs e) { SendKeys.Send("^x"); }
         private void Copy(object sender, EventArgs e) { SendKeys.Send("^c"); }
         private void Paste(object sender, EventArgs e) { SendKeys.Send("^v"); }
@@ -465,6 +564,35 @@ namespace WordPad_WF
                 saveFileDialog.Reset();
             }
             file.Visible = false;
+        }
+
+        private void AlignText(int num)
+        {
+            switch (num)
+            {
+                case 1:
+                    CustomTextBox.SelectAll();
+                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Left;
+                    break;
+                case 2:
+                    CustomTextBox.SelectAll();
+                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Center;
+                    break;
+                case 3:
+                    CustomTextBox.SelectAll();
+                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Right;
+                    break;
+                case 4:
+                    CustomTextBox.SelectAll();
+                    CustomTextBox.SelectionIndent = 0;
+                    break;
+                case 5:
+                    CustomTextBox.SelectAll();
+                    CustomTextBox.SelectionIndent = 40;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
