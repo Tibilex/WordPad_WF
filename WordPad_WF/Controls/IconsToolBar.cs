@@ -36,6 +36,7 @@ namespace WordPad_WF.Controls
 
         #endregion
 
+        #region - Constructor -
         public IconsToolBar(WordPad form)
         {
             this.Font = form.Font;
@@ -96,6 +97,7 @@ namespace WordPad_WF.Controls
 
             form.Controls.Add(this);
         }
+        #endregion
 
         #region - Events -
 
