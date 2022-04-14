@@ -7,28 +7,28 @@ namespace WordPad_WF.Controls
     internal class CustomToolBarView : Panel
     {
         #region - Objects - 
-        GroupBox scaleSector;
-        GroupBox showHideSector;
-        GroupBox optionsSector;
+        private GroupBox _scaleSector;
+        private GroupBox _showHideSector;
+        private GroupBox _optionsSector;
 
         public OnPaintButtons buttonZoomUp;
         public OnPaintButtons buttonZoomDown;
         public OnPaintButtons buttonStockSize;
 
-        MenuStrip menuStrip;
+        private MenuStrip _menuStrip;
         public ToolStripMenuItem buttonTransfer;
         public ToolStripMenuItem transferItem1;
         public ToolStripMenuItem transferItem2;
         public ToolStripMenuItem transferItem3;
-        MenuStrip menuStrip2;
+        private MenuStrip _menuStrip2;
         public ToolStripMenuItem buttonUnit;
         public ToolStripMenuItem unitItem1;
         public ToolStripMenuItem unitItem2;
         public ToolStripMenuItem unitItem3;
         public ToolStripMenuItem unitItem4;
 
-        PictureBox imageRuler;
-        PictureBox imageStatusBar;
+        private PictureBox _imageRuler;
+        private PictureBox _imageStatusBar;
 
         public CheckBox ruler;
         public CheckBox statusBar;
@@ -42,12 +42,12 @@ namespace WordPad_WF.Controls
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
             #region - Scale sector -
-            scaleSector = new GroupBox()
+            _scaleSector = new GroupBox()
             {
                 Location = new Point(0, -5),
                 Size = new Size(185, 106),
             };
-            scaleSector.Controls.Add(new Label()
+            _scaleSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(100, 15),
@@ -64,18 +64,18 @@ namespace WordPad_WF.Controls
             buttonStockSize = new OnPaintButtons(new Point(126, 12), Properties.Resources.surface_40px, new Size(56, 70), 10, 6, 40, 40, 12, 48, 78, 24);
             buttonStockSize.Text = "100 %";
 
-            scaleSector.Controls.Add(buttonZoomUp);
-            scaleSector.Controls.Add(buttonZoomDown);
-            scaleSector.Controls.Add(buttonStockSize);
+            _scaleSector.Controls.Add(buttonZoomUp);
+            _scaleSector.Controls.Add(buttonZoomDown);
+            _scaleSector.Controls.Add(buttonStockSize);
             #endregion
 
             #region - Show/Hide sector -
-            showHideSector = new GroupBox()
+            _showHideSector = new GroupBox()
             {
                 Location = new Point(158, -5),
                 Size = new Size(180, 106),
             };
-            showHideSector.Controls.Add(new Label()
+            _showHideSector.Controls.Add(new Label()
             {
                 AutoSize = true,
                 Size = new Size(120, 15),
@@ -83,7 +83,7 @@ namespace WordPad_WF.Controls
                 Location = new Point(45, this.Height - 11)
             });
 
-            imageRuler = new PictureBox()
+            _imageRuler = new PictureBox()
             {
                 Location = new Point(32, 20),
                 Size = new Size(20, 20),
@@ -91,7 +91,7 @@ namespace WordPad_WF.Controls
                 BackgroundImageLayout = ImageLayout.Stretch
             };
 
-            imageStatusBar = new PictureBox()
+            _imageStatusBar = new PictureBox()
             {
                 Location = new Point(32, 45),
                 Size = new Size(20, 20),
@@ -115,19 +115,19 @@ namespace WordPad_WF.Controls
                 Checked = true
             };
 
-            showHideSector.Controls.Add(imageRuler);
-            showHideSector.Controls.Add(imageStatusBar);
-            showHideSector.Controls.Add(ruler);
-            showHideSector.Controls.Add(statusBar);
+            _showHideSector.Controls.Add(_imageRuler);
+            _showHideSector.Controls.Add(_imageStatusBar);
+            _showHideSector.Controls.Add(ruler);
+            _showHideSector.Controls.Add(statusBar);
             #endregion
 
             #region - Options sector -
-            optionsSector = new GroupBox()
+            _optionsSector = new GroupBox()
             {
                 Location = new Point(336, -5),
                 Size = new Size(158, 106),
             };
-            optionsSector.Controls.Add(new Label()
+            _optionsSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(60, 15),
@@ -135,13 +135,13 @@ namespace WordPad_WF.Controls
                 Location = new Point(50, this.Height - 11)
             });
 
-            menuStrip = new MenuStrip()
+            _menuStrip = new MenuStrip()
             {
                 Location = new Point(50,20),
                 Size = new Size(24, 24),
                 BackColor = SystemColors.ControlLightLight
             };
-            menuStrip.Items.AddRange(new ToolStripItem[] { buttonTransfer = new ToolStripMenuItem(Properties.Resources.transfer_64px)
+            _menuStrip.Items.AddRange(new ToolStripItem[] { buttonTransfer = new ToolStripMenuItem(Properties.Resources.transfer_64px)
             { 
                 Size = new Size(140, 26),
                 AutoSize = false,
@@ -156,13 +156,13 @@ namespace WordPad_WF.Controls
                 transferItem3 = new ToolStripMenuItem("В границах линейки") {CheckOnClick = true, Checked = false},
             });
 
-            menuStrip2 = new MenuStrip()
+            _menuStrip2 = new MenuStrip()
             {
                 Location = new Point(50, 46),
                 Size = new Size(24, 24),
                 BackColor = SystemColors.ControlLightLight
             };
-            menuStrip2.Items.AddRange(new ToolStripItem[] { buttonUnit = new ToolStripMenuItem(Properties.Resources.lipids_40px)
+            _menuStrip2.Items.AddRange(new ToolStripItem[] { buttonUnit = new ToolStripMenuItem(Properties.Resources.lipids_40px)
             {
                 Size = new Size(140, 26),
                 AutoSize = false,
@@ -177,13 +177,13 @@ namespace WordPad_WF.Controls
                 unitItem4 = new ToolStripMenuItem("Пики") {CheckOnClick = true, Checked = false}
             });
 
-            optionsSector.Controls.Add(menuStrip2);           
-            optionsSector.Controls.Add(menuStrip);           
+            _optionsSector.Controls.Add(_menuStrip2);           
+            _optionsSector.Controls.Add(_menuStrip);           
             #endregion
 
-            this.Controls.Add(scaleSector);
-            this.Controls.Add(showHideSector);
-            this.Controls.Add(optionsSector);
+            this.Controls.Add(_scaleSector);
+            this.Controls.Add(_showHideSector);
+            this.Controls.Add(_optionsSector);
         }
     }
 }

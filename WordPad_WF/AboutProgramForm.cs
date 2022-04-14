@@ -18,23 +18,23 @@ namespace WordPad_WF
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            button1.Text = "Ok";
+            button1.Text = "OkEventArgs";
             pictureBox1.BackgroundImage = Properties.Resources.windows_10_120px;
             pictureBox2.BackgroundImage = Properties.Resources.code_fork_120px;
             richTextBox1.Text = Properties.Resources.about;
             richTextBox1.ReadOnly = true;
             richTextBox1.BorderStyle = BorderStyle.None;
 
-            richTextBox1.LinkClicked += Link;
-            button1.Click += Ok;
+            richTextBox1.LinkClicked += GitLinkClickedEventArgs;
+            button1.Click += OkEventArgs;
         }
 
-        private void Link(object sender, LinkClickedEventArgs e)
+        private void GitLinkClickedEventArgs(object sender, LinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Tibilex/WordPad_WF/tree/work");
         }
 
-        private void Ok(object sender, EventArgs e)
+        private void OkEventArgs(object sender, EventArgs e)
         {
             this.Close();
         }
