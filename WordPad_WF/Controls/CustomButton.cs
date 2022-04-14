@@ -7,10 +7,10 @@ namespace WordPad_WF.Controls
 {
     class CustomButton : Control
     {
-        StringFormat _format = new StringFormat();
-        private bool MouseEntered = false;
-        private bool MousePressed = false;
-        private Image image;
+        private StringFormat _format = new StringFormat();
+        private bool _mouseEntered = false;
+        private bool _mousePressed = false;
+        private Image _image;
 
         public CustomButton(string text, Point point, Image image)
         {
@@ -21,7 +21,7 @@ namespace WordPad_WF.Controls
                 ControlStyles.UserPaint, true);
             DoubleBuffered = true;
 
-            this.image = image;
+            this._image = image;
             this.Location = point;
             this.Text = text;
             this.Size = new Size(250, 42);
@@ -42,18 +42,18 @@ namespace WordPad_WF.Controls
             Rectangle rectText = new Rectangle(60, 0, Width - 1, Height - 1);
             Rectangle rectimage = new Rectangle(10, 2, 36, 36);
 
-            graphic.DrawImage(image, rectimage);
+            graphic.DrawImage(_image, rectimage);
             graphic.DrawRectangle(new Pen(this.BackColor), rect);
             graphic.FillRectangle(new SolidBrush(this.BackColor), rectText);
             graphic.DrawString(this.Text, this.Font, new SolidBrush(ForeColor), rectText, _format);
 
-            if (MouseEntered)
+            if (_mouseEntered)
             {
                 graphic.DrawRectangle(new Pen(Color.FromArgb(50, Color.FromArgb(0, 128, 204))), rect);
                 graphic.FillRectangle(new SolidBrush(Color.FromArgb(50, Color.FromArgb(140, 202, 247))), rect);
             }
 
-            if (MousePressed)
+            if (_mousePressed)
             {
                 graphic.DrawRectangle(new Pen(Color.FromArgb(60, Color.FromArgb(0, 128, 204))), rect);
                 graphic.FillRectangle(new SolidBrush(Color.FromArgb(60, Color.Black)), rect);
@@ -63,27 +63,27 @@ namespace WordPad_WF.Controls
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
-            MouseEntered = true;
+            _mouseEntered = true;
             Invalidate();
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-            MouseEntered = false;
+            _mouseEntered = false;
             Invalidate();
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-            MousePressed = true;
+            _mousePressed = true;
             Invalidate();
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-            MousePressed = false;
+            _mousePressed = false;
             Invalidate();
         }
     }

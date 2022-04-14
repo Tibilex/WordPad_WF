@@ -11,35 +11,35 @@ namespace WordPad_WF
     public partial class WordPad : Form
     {
         #region - Objects & Fields -
-        OpenFileDialog openFileDialog = new OpenFileDialog();
-        SaveFileDialog saveFileDialog = new SaveFileDialog();
-        PrintDialog printDialog = new PrintDialog();
-        PrintDocument printDoc = new PrintDocument();
-        ColorDialog ColorDialog = new ColorDialog();
+        private OpenFileDialog _openFileDialog = new OpenFileDialog();
+        private SaveFileDialog _saveFileDialog = new SaveFileDialog();
+        private PrintDialog _printDialog = new PrintDialog();
+        private PrintDocument _printDocument = new PrintDocument();
+        private ColorDialog _colorDialog = new ColorDialog();
 
-        IconsToolBar iconsToolBar;
-        ToolStripMenuItem fileToolBar;
-        ToolStripMenuItem MainToolBar;
-        ToolStripMenuItem ViewToolBar;
-        AboutProgramForm aboutProgramForm;
-        OnPaintButtons closeWindow;
-        OnPaintButtons minimizeWindow;
-        OnPaintButtons maximazeWindow;
-        OnPaintButtons ReestablishWindow;
+        private IconsToolBar _iconsToolBar;
+        private ToolStripMenuItem _fileToolBar;
+        private ToolStripMenuItem _mainToolBar;
+        private ToolStripMenuItem _viewToolBar;
+        private AboutProgramForm _aboutProgramForm;
+        private OnPaintButtons _closeWindow;
+        private OnPaintButtons _minimizeWindow;
+        private OnPaintButtons _maximazeWindow;
+        private OnPaintButtons _restoreWindow;
 
-        MenuStrip menuStrip = new MenuStrip();
-        CustomToolBarFile file = new CustomToolBarFile();
-        CustomToolBarMain main = new CustomToolBarMain();
-        CustomToolBarView view = new CustomToolBarView();
-        CustomTextBox CustomTextBox = new CustomTextBox();
+        private MenuStrip _menuStrip = new MenuStrip();
+        private CustomToolBarFile _fileTab = new CustomToolBarFile();
+        private CustomToolBarMain _mainTab = new CustomToolBarMain();
+        private CustomToolBarView _viewTab = new CustomToolBarView();
+        private CustomTextBox _customTextBox = new CustomTextBox();
 
-        const int cGrip = 16;
-        const int cCaption = 32;
-        string fileFormatFilter = "Файл RTF (*.rtf)|*.rtf|" +
+        private const int c_grip = 16;
+        private const int c_caption = 32;
+        private string _fileFormatFilter = "Файл RTF (*.rtf)|*.rtf|" +
                 "Текстовый документ (*.txt)|*.txt|" +
-                "Документ Office Open XML (*.docx)|*.docx|" +
+                "Документ Office OpenEventArgs XML (*.docx)|*.docx|" +
                 "Документ OpenDocument (*.odt)|*.odt";
-        string imageFormatFilter = 
+        private string _imageFormatFilter = 
             $"Все файлы изображений (*.BMP,*.DIB,*.RLE,*.JPG,*.JPEG,*.JPE,*.JFIF,*.GIF,*.EMF,*.WMF,*.TIFF,*.PNG,*.ICO)|*.bmp;*.dib;*.rle;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.emf;*.wmf;*.tiff;*.png;*.ico|" +
             "BMP (*.BMP,*.DIB,*.RLE)|*.bmp;*.dib;*.rle|" +
             "JPEG (*.JPG,*.JPEG,*.JPE,*.JFIF)|*.jpg;*.jpeg;*.jpe;*.jfif|" +
@@ -65,103 +65,103 @@ namespace WordPad_WF
         }
         private void WordPad_Load(object sender, EventArgs e)
         {
-            this.MouseDown += FormDrag;
-            this.Controls.Add(menuStrip);
-            menuStrip.Items.Add(fileToolBar = new ToolStripMenuItem("Файл") { BackColor = Color.FromArgb(0, 128, 204), ForeColor = Color.White });
-            menuStrip.Items.Add(MainToolBar = new ToolStripMenuItem("Главная") { Padding = new Padding(1, 1, 1, 3) });
-            menuStrip.Items.Add(ViewToolBar = new ToolStripMenuItem("Вид") { Padding = new Padding(1, 1, 1, 3) });
+            this.MouseDown += FormDragMouseEventArgs;
+            this.Controls.Add(_menuStrip);
+            _menuStrip.Items.Add(_fileToolBar = new ToolStripMenuItem("Файл") { BackColor = Color.FromArgb(0, 128, 204), ForeColor = Color.White });
+            _menuStrip.Items.Add(_mainToolBar = new ToolStripMenuItem("Главная") { Padding = new Padding(1, 1, 1, 3) });
+            _menuStrip.Items.Add(_viewToolBar = new ToolStripMenuItem("Вид") { Padding = new Padding(1, 1, 1, 3) });
 
-            Controls.Add(file);
-            Controls.Add(main);
-            Controls.Add(view);
+            Controls.Add(_fileTab);
+            Controls.Add(_mainTab);
+            Controls.Add(_viewTab);
 
-            file.Visible = false;
-            main.Visible = true;
-            view.Visible = false;
+            _fileTab.Visible = false;
+            _mainTab.Visible = true;
+            _viewTab.Visible = false;
 
             // Tab "File"
-            file.buttonOpen.Click += Open;
-            file.buttonCreate.Click += Create;
-            file.buttonSave.Click += Save;
-            file.buttonSaveAs.Click += SaveAs;
-            file.buttonPrint.Click += QuickPrint;
-            file.buttonSendMail.Click += SendMail;
-            file.buttonExit.Click += Exit;
-            file.buttonAbout.Click += AboutProgram;
-            file.buttonSaveAs.MouseHover += EnterSaveAsFormat;
-            file.saveFileFormatButtons.MouseLeave += LeaveSaveAsFormat;
-            file.buttonRTF.Click += SaveAs;
-            file.buttonTXT.Click += SaveAs;
-            file.buttonXML.Click += SaveAs;
-            file.buttonOpenDoc.Click += SaveAs;
-            file.buttonAllFormats.Click += SaveAs;
+            _fileTab.buttonOpen.Click += OpenEventArgs;
+            _fileTab.buttonCreate.Click += CreateEventArgs;
+            _fileTab.buttonSave.Click += SaveEventArgs;
+            _fileTab.buttonSaveAs.Click += SaveAsEventArgs;
+            _fileTab.buttonPrint.Click += QuickPrintEventArgs;
+            _fileTab.buttonSendMail.Click += SendMailEventArgs;
+            _fileTab.buttonExit.Click += ExitProgrammEventArgs;
+            _fileTab.buttonAbout.Click += AboutProgramEventArgs;
+            _fileTab.buttonSaveAs.MouseHover += EnterSaveAsFormatEventArgs;
+            _fileTab.saveFileFormatButtons.MouseLeave += LeaveSaveAsFormatEventArgs;
+            _fileTab.buttonRTF.Click += SaveAsEventArgs;
+            _fileTab.buttonTXT.Click += SaveAsEventArgs;
+            _fileTab.buttonXML.Click += SaveAsEventArgs;
+            _fileTab.buttonOpenDoc.Click += SaveAsEventArgs;
+            _fileTab.buttonAllFormats.Click += SaveAsEventArgs;
 
-            fileToolBar.MouseDown += FileTab;
-            MainToolBar.MouseDown += MainTab;
-            ViewToolBar.MouseDown += ViewTab;
+            _fileToolBar.MouseDown += FileTabEventArgs;
+            _mainToolBar.MouseDown += MainTabMouseEventArgs;
+            _viewToolBar.MouseDown += ViewTabMouseEventArgs;
 
-            CustomTextBox.MouseUp += FontFormat;
+            _customTextBox.MouseUp += FontFormatMouseEventArgs;
 
             // Tab "Main"
-            main.buttonCut.Click += Cut;
-            main.buttonCopy.Click += Copy;
-            main.buttonPaste.Click += Paste;
-            main.fontBold.Click += BoldFont;
-            main.fontItalic.Click += ItalicFont;
-            main.fontUnderline.Click += UnderlineFont;
-            main.strikethrow.Click += StrikeOutFont;
-            main.subscript.Click += Subscrypt;
-            main.superscrypt.Click += SuperScrypt;
-            main.fontName.SelectedIndexChanged += FontName;
-            main.fontSize.SelectedIndexChanged += FontSize;
-            main.fontColor.Click += FontColor;
-            main.textSelectionСolor.Click += TextSelectedColor;
-            main.fontSizeUp.Click += FontSizeUp;
-            main.fontSizeDown.Click += FontSizeDown;
-            main.buttonPaint.Click += OpenPaint;
-            main.buttonPicture.Click += OpenImage;
-            main.buttonSelectAll.Click += SelectAll;
-            main.buttonSearch.Click += Search;
-            main.buttonRepalace.Click += Replace;
-            main.alignLeft.Click += AlignLeft;
-            main.alignCenter.Click += AlignCenter;
-            main.alignRight.Click += AlignRight;
-            main.indent.Click += Indent;
-            main.outdent.Click += Outdent;
+            _mainTab.buttonCut.Click += CutEventArgs;
+            _mainTab.buttonCopy.Click += CopyEventArgs;
+            _mainTab.buttonPaste.Click += PasteEventArgs;
+            _mainTab.fontBold.Click += BoldFontEventArgs;
+            _mainTab.fontItalic.Click += ItalicFontEventArgs;
+            _mainTab.fontUnderline.Click += UnderlineFontEventArgs;
+            _mainTab.strikethrow.Click += StrikeOutFontEventArgs;
+            _mainTab.subscript.Click += SubscryptEventArgs;
+            _mainTab.superscrypt.Click += SuperScryptEventArgs;
+            _mainTab.fontName.SelectedIndexChanged += FontNameEventArgs;
+            _mainTab.fontSize.SelectedIndexChanged += FontSizeEventArgs;
+            _mainTab.fontColor.Click += FontColorEventArgs;
+            _mainTab.textSelectionСolor.Click += TextSelectedColorEventArgs;
+            _mainTab.fontSizeUp.Click += FontSizeUpEventArgs;
+            _mainTab.fontSizeDown.Click += FontSizeDownEventArgs;
+            _mainTab.buttonPaint.Click += OpenPaintEventArgs;
+            _mainTab.buttonPicture.Click += OpenImageEventArgs;
+            _mainTab.buttonSelectAll.Click += SelectAllEventArgs;
+            _mainTab.buttonSearch.Click += SearchEventArgs;
+            _mainTab.buttonRepalace.Click += ReplaceEventArgs;
+            _mainTab.alignLeft.Click += AlignLeftEventArgs;
+            _mainTab.alignCenter.Click += AlignCenterEventArgs;
+            _mainTab.alignRight.Click += AlignRightEventArgs;
+            _mainTab.indent.Click += IndentEventArgs;
+            _mainTab.outdent.Click += OutdentEventArgs;
 
-            view.buttonZoomUp.Click += ZoomUp;
-            view.buttonZoomDown.Click += ZoomDown;
+            _viewTab.buttonZoomUp.Click += ZoomUpEventArgs;
+            _viewTab.buttonZoomDown.Click += ZoomDownEventArgs;
 
             //Close, Minimize, Maximaze, Restore buttons
-            this.Controls.Add(closeWindow = new OnPaintButtons(new Point(this.Width - 44, -2),
+            this.Controls.Add(_closeWindow = new OnPaintButtons(new Point(this.Width - 44, -2),
                 Properties.Resources.Close_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
-            this.Controls.Add(maximazeWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
+            this.Controls.Add(_maximazeWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
                 Properties.Resources.maximize_button_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
-            this.Controls.Add(ReestablishWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
+            this.Controls.Add(_restoreWindow = new OnPaintButtons(new Point(this.Width - 90, -2),
                 Properties.Resources.restore_down_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
-            this.Controls.Add(minimizeWindow = new OnPaintButtons(new Point(this.Width - 136, -2),
+            this.Controls.Add(_minimizeWindow = new OnPaintButtons(new Point(this.Width - 136, -2),
                 Properties.Resources.subtract_24px, new Size(44, 32), 13, 8, 16, 16, 28, 0, 44, 32));
-            closeWindow.color = Color.Red;
-            closeWindow.Click += Exit;
-            minimizeWindow.Click += Minimize;
-            maximazeWindow.Click += ReestablishMainWondow;
-            ReestablishWindow.Click += ReestablishMainWondow;
+            _closeWindow.color = Color.Red;
+            _closeWindow.Click += ExitProgrammEventArgs;
+            _minimizeWindow.Click += MinimizeWindowEventArgs;
+            _maximazeWindow.Click += RestoreMainWondowEventArgs;
+            _restoreWindow.Click += RestoreMainWondowEventArgs;
 
             // Icon toolbar in left corner of the screen
-            iconsToolBar = new IconsToolBar(this);
-            iconsToolBar.MouseDown += FormDrag;
-            iconsToolBar.open.Click += Open;
-            iconsToolBar.save.Click += Save;
-            iconsToolBar.undo.Click += Undo;
-            iconsToolBar.redo.Click += Redo;
-            iconsToolBar.sendMail.Click += SendMail;
-            iconsToolBar.quickPrint.Click += QuickPrint;
-            iconsToolBar.exit.Click += Exit;
-            iconsToolBar.minimize.Click += Minimize;
-            iconsToolBar.maximize.Click += Maximize;
-            iconsToolBar.reestablish.Click += Reestablish;
+            _iconsToolBar = new IconsToolBar(this);
+            _iconsToolBar.MouseDown += FormDragMouseEventArgs;
+            _iconsToolBar.open.Click += OpenEventArgs;
+            _iconsToolBar.save.Click += SaveEventArgs;
+            _iconsToolBar.undo.Click += UndoEventArgs;
+            _iconsToolBar.redo.Click += RedoEventArgs;
+            _iconsToolBar.sendMail.Click += SendMailEventArgs;
+            _iconsToolBar.quickPrint.Click += QuickPrintEventArgs;
+            _iconsToolBar.exit.Click += ExitProgrammEventArgs;
+            _iconsToolBar.minimize.Click += MinimizeWindowEventArgs;
+            _iconsToolBar.maximize.Click += MaximizeWindowEventArgs;
+            _iconsToolBar.reestablish.Click += RestoreWindowEventArgs;
 
-            this.Controls.Add(CustomTextBox);
+            this.Controls.Add(_customTextBox);
         }
 
         #endregion
@@ -169,67 +169,67 @@ namespace WordPad_WF
         #region - Events -
 
         #region - Font Style events -
-        private void Outdent(object sender, EventArgs e) { AlignText(5); }
-        private void Indent(object sender, EventArgs e) { AlignText(4); }
-        private void AlignLeft(object sender, EventArgs e) { AlignText(1); }
-        private void AlignCenter(object sender, EventArgs e) { AlignText(2); }
-        private void AlignRight(object sender, EventArgs e) { AlignText(3); }
+        private void OutdentEventArgs(object sender, EventArgs e) { AlignText(5); }
+        private void IndentEventArgs(object sender, EventArgs e) { AlignText(4); }
+        private void AlignLeftEventArgs(object sender, EventArgs e) { AlignText(1); }
+        private void AlignCenterEventArgs(object sender, EventArgs e) { AlignText(2); }
+        private void AlignRightEventArgs(object sender, EventArgs e) { AlignText(3); }
         // font size up combobox event
-        private void FontSizeUp(object sender, EventArgs e)
+        private void FontSizeUpEventArgs(object sender, EventArgs e)
         {
-            if (main.fontSize.SelectedIndex != main.fontSize.Items.Count -1) 
+            if (_mainTab.fontSize.SelectedIndex != _mainTab.fontSize.Items.Count -1) 
             {
-                main.fontSize.SelectedIndex++;
+                _mainTab.fontSize.SelectedIndex++;
             }
         }
         // font size down combobox event
-        private void FontSizeDown(object sender, EventArgs e)
+        private void FontSizeDownEventArgs(object sender, EventArgs e)
         {
-            if (main.fontSize.SelectedIndex != 0)
+            if (_mainTab.fontSize.SelectedIndex != 0)
             {
-                main.fontSize.SelectedIndex--;
+                _mainTab.fontSize.SelectedIndex--;
             }
         }
         // Color BackGround Text event
-        private void TextSelectedColor(object sender, EventArgs e)
+        private void TextSelectedColorEventArgs(object sender, EventArgs e)
         {
-            DialogResult = ColorDialog.ShowDialog(this);
+            DialogResult = _colorDialog.ShowDialog(this);
             if (DialogResult == DialogResult.OK)
             {
-                CustomTextBox.SelectionBackColor = ColorDialog.Color;
+                _customTextBox.SelectionBackColor = _colorDialog.Color;
             }
         }
         // Color Text event
-        private void FontColor(object sender, EventArgs e)
+        private void FontColorEventArgs(object sender, EventArgs e)
         {
-            DialogResult = ColorDialog.ShowDialog(this);
+            DialogResult = _colorDialog.ShowDialog(this);
             if (DialogResult == DialogResult.OK)
             {
-                CustomTextBox.SelectionColor = ColorDialog.Color;
+                _customTextBox.SelectionColor = _colorDialog.Color;
             }
         }
         // Font Size event
-        private void FontSize(object sender, EventArgs e)
+        private void FontSizeEventArgs(object sender, EventArgs e)
         {
-            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
-            float newSize = (float)Convert.ToDouble(main.fontSize.SelectedItem);
-            CustomTextBox.SelectionFont = new Font(SelectedCurrentFont.FontFamily, newSize, SelectedCurrentFont.Style);
+            Font SelectedCurrentFont = _customTextBox.SelectionFont;
+            float newSize = (float)Convert.ToDouble(_mainTab.fontSize.SelectedItem);
+            _customTextBox.SelectionFont = new Font(SelectedCurrentFont.FontFamily, newSize, SelectedCurrentFont.Style);
         }
         // Font name event
-        private void FontName(object sender, EventArgs e)
+        private void FontNameEventArgs(object sender, EventArgs e)
         {
-            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
-            CustomTextBox.SelectionFont = new Font(main.fontName.SelectedItem.ToString(), SelectedCurrentFont.Size, SelectedCurrentFont.Style);
+            Font SelectedCurrentFont = _customTextBox.SelectionFont;
+            _customTextBox.SelectionFont = new Font(_mainTab.fontName.SelectedItem.ToString(), SelectedCurrentFont.Size, SelectedCurrentFont.Style);
         }
         // Underline text format event
-        private void UnderlineFont(object sender, EventArgs e)
+        private void UnderlineFontEventArgs(object sender, EventArgs e)
         {
-            if (CustomTextBox.SelectionFont != null)
+            if (_customTextBox.SelectionFont != null)
             {
-                Font currentFont = CustomTextBox.SelectionFont;
+                Font currentFont = _customTextBox.SelectionFont;
                 FontStyle newFontStyle;
 
-                if (CustomTextBox.SelectionFont.Underline == true)
+                if (_customTextBox.SelectionFont.Underline == true)
                 {
                     newFontStyle = FontStyle.Regular;
                 }
@@ -237,18 +237,18 @@ namespace WordPad_WF
                 {
                     newFontStyle = FontStyle.Underline;
                 }
-                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+                _customTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
             }
         }
         // Strikeout text format event
-        private void StrikeOutFont(object sender, EventArgs e)
+        private void StrikeOutFontEventArgs(object sender, EventArgs e)
         {
-            if (CustomTextBox.SelectionFont != null)
+            if (_customTextBox.SelectionFont != null)
             {
-                Font currentFont = CustomTextBox.SelectionFont;
+                Font currentFont = _customTextBox.SelectionFont;
                 FontStyle newFontStyle;
 
-                if (CustomTextBox.SelectionFont.Strikeout == true)
+                if (_customTextBox.SelectionFont.Strikeout == true)
                 {
                     newFontStyle = FontStyle.Regular;
                 }
@@ -256,18 +256,18 @@ namespace WordPad_WF
                 {
                     newFontStyle = FontStyle.Strikeout;
                 }
-                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+                _customTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
             }
         }
         // Italic text format event
-        private void ItalicFont(object sender, EventArgs e)
+        private void ItalicFontEventArgs(object sender, EventArgs e)
         {
-            if (CustomTextBox.SelectionFont != null)
+            if (_customTextBox.SelectionFont != null)
             {
-                Font currentFont = CustomTextBox.SelectionFont;
+                Font currentFont = _customTextBox.SelectionFont;
                 FontStyle newFontStyle;
 
-                if (CustomTextBox.SelectionFont.Italic == true)
+                if (_customTextBox.SelectionFont.Italic == true)
                 {
                     newFontStyle = FontStyle.Regular;
                 }
@@ -275,16 +275,16 @@ namespace WordPad_WF
                 {
                     newFontStyle = FontStyle.Italic;
                 }
-                CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+                _customTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
             }
         }
         // Bold text format event
-        private void BoldFont(object sender, EventArgs e)
+        private void BoldFontEventArgs(object sender, EventArgs e)
         {
-            Font currentFont = CustomTextBox.SelectionFont;
+            Font currentFont = _customTextBox.SelectionFont;
             FontStyle newFontStyle;
 
-            if (CustomTextBox.SelectionFont.Bold == true)
+            if (_customTextBox.SelectionFont.Bold == true)
             {
                 newFontStyle = FontStyle.Regular;
             }
@@ -292,37 +292,37 @@ namespace WordPad_WF
             {
                 newFontStyle = FontStyle.Bold;
             }
-            CustomTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
+            _customTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
         }
         // Superscrypt text format event
-        private void SuperScrypt(object sender, EventArgs e)
+        private void SuperScryptEventArgs(object sender, EventArgs e)
         {
-            CustomTextBox.SelectionCharOffset = 8;
+            _customTextBox.SelectionCharOffset = 8;
         }
         // Subscrypt text format event
-        private void Subscrypt(object sender, EventArgs e)
+        private void SubscryptEventArgs(object sender, EventArgs e)
         {
-            CustomTextBox.SelectionCharOffset = -8;
+            _customTextBox.SelectionCharOffset = -8;
         }
         // font format event
-        private void FontFormat(object sender, MouseEventArgs e)
+        private void FontFormatMouseEventArgs(object sender, MouseEventArgs e)
         {
-            Font SelectedCurrentFont = CustomTextBox.SelectionFont;
-            main.fontSize.SelectedItem = SelectedCurrentFont.Size.ToString();
-            main.fontName.SelectedItem = SelectedCurrentFont.Name.ToString();
-            main.fontBold.Checked = false;
-            main.fontItalic.Checked = false;
-            main.fontUnderline.Checked = false;
+            Font SelectedCurrentFont = _customTextBox.SelectionFont;
+            _mainTab.fontSize.SelectedItem = SelectedCurrentFont.Size.ToString();
+            _mainTab.fontName.SelectedItem = SelectedCurrentFont.Name.ToString();
+            _mainTab.fontBold.Checked = false;
+            _mainTab.fontItalic.Checked = false;
+            _mainTab.fontUnderline.Checked = false;
             switch (SelectedCurrentFont.Style.ToString())
             {
                 case "Bold":
-                    main.fontBold.Checked = true;
+                    _mainTab.fontBold.Checked = true;
                     break;
                 case "Italic":
-                    main.fontItalic.Checked = true;
+                    _mainTab.fontItalic.Checked = true;
                     break;
                 case "Underline":
-                    main.fontUnderline.Checked = true;
+                    _mainTab.fontUnderline.Checked = true;
                     break;
                 case "Strikeout":
                     break;
@@ -339,13 +339,13 @@ namespace WordPad_WF
             {
                 Point pos = new Point(m.LParam.ToInt32());
                 pos = this.PointToClient(pos);
-                if (pos.Y < cCaption)
+                if (pos.Y < c_caption)
                 {
                     m.Result = (IntPtr)2;
                     return;
                 }
 
-                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                if (pos.X >= this.ClientSize.Width - c_grip && pos.Y >= this.ClientSize.Height - c_grip)
                 {
                     m.Result = (IntPtr)17;
                     return;
@@ -353,82 +353,82 @@ namespace WordPad_WF
             }
             base.WndProc(ref m);
         }
-        private void FormDrag(object sender, MouseEventArgs e)
+        private void FormDragMouseEventArgs(object sender, MouseEventArgs e)
         {
             base.Capture = false;
             Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             this.WndProc(ref m);
         }
-        private void EnterSaveAsFormat(object sender, EventArgs e)
+        private void EnterSaveAsFormatEventArgs(object sender, EventArgs e)
         {
-            file.lastDocLabel.Visible = false;
-            file.openDocumentList.Visible = false;
-            file.saveFileFormatLabel.Visible = true;
-            file.saveFileFormatButtons.Visible = true;
+            _fileTab.lastDocLabel.Visible = false;
+            _fileTab.openDocumentList.Visible = false;
+            _fileTab.saveFileFormatLabel.Visible = true;
+            _fileTab.saveFileFormatButtons.Visible = true;
         }
-        private void LeaveSaveAsFormat(object sender, EventArgs e)
+        private void LeaveSaveAsFormatEventArgs(object sender, EventArgs e)
         {
-            file.lastDocLabel.Visible = true;
-            file.openDocumentList.Visible = true;
-            file.saveFileFormatLabel.Visible = false;
-            file.saveFileFormatButtons.Visible = false;
-        }
-
-        private void AboutProgram(object sender, EventArgs e)
-        {
-            aboutProgramForm = new AboutProgramForm();
-            aboutProgramForm.ShowDialog();
-            file.Visible = false;
+            _fileTab.lastDocLabel.Visible = true;
+            _fileTab.openDocumentList.Visible = true;
+            _fileTab.saveFileFormatLabel.Visible = false;
+            _fileTab.saveFileFormatButtons.Visible = false;
         }
 
-        private void Reestablish(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal;}
-        private void ReestablishMainWondow(object sender, EventArgs e)
+        private void AboutProgramEventArgs(object sender, EventArgs e)
         {
-            if (maximazeWindow.Visible == true)
+            _aboutProgramForm = new AboutProgramForm();
+            _aboutProgramForm.ShowDialog();
+            _fileTab.Visible = false;
+        }
+
+        private void RestoreWindowEventArgs(object sender, EventArgs e) { this.WindowState = FormWindowState.Normal;}
+        private void RestoreMainWondowEventArgs(object sender, EventArgs e)
+        {
+            if (_maximazeWindow.Visible == true)
             {
-                maximazeWindow.Visible = false;
+                _maximazeWindow.Visible = false;
                 this.WindowState = FormWindowState.Maximized;
             }
-            else if (ReestablishWindow.Visible == true)
+            else if (_restoreWindow.Visible == true)
             {
-                ReestablishWindow.Visible = false;
-                maximazeWindow.Visible = true;
+                _restoreWindow.Visible = false;
+                _maximazeWindow.Visible = true;
                 this.WindowState = FormWindowState.Normal;
             }
-            ReestablishWindow.Visible = true;
+            _restoreWindow.Visible = true;
         }
-        private void Maximize(object sender, EventArgs e) { this.WindowState = FormWindowState.Maximized; }
-        private void Minimize(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized; }
+        private void MaximizeWindowEventArgs(object sender, EventArgs e) { this.WindowState = FormWindowState.Maximized; }
+        private void MinimizeWindowEventArgs(object sender, EventArgs e) { this.WindowState = FormWindowState.Minimized; }
 
-        private void ViewTab(object sender, MouseEventArgs e)
+        private void ViewTabMouseEventArgs(object sender, MouseEventArgs e)
         {
-            main.Visible = false;
-            view.Visible = true;              
-        }
-
-        private void MainTab(object sender, MouseEventArgs e)
-        {
-            main.Visible = true;
-            view.Visible = false;
+            _mainTab.Visible = false;
+            _viewTab.Visible = true;              
         }
 
-        private void FileTab(object sender, EventArgs e)
+        private void MainTabMouseEventArgs(object sender, MouseEventArgs e)
         {
-            if (file.Visible == true)
+            _mainTab.Visible = true;
+            _viewTab.Visible = false;
+        }
+
+        private void FileTabEventArgs(object sender, EventArgs e)
+        {
+            if (_fileTab.Visible == true)
             {
-                file.Visible = false;
+                _fileTab.Visible = false;
             }
-            else { file.Visible = true; }
+            else { _fileTab.Visible = true; }
         }
-        private void Exit(object sender, EventArgs e)
+        private void ExitProgrammEventArgs(object sender, EventArgs e)
         {
-            if (CustomTextBox.Text != "")
+            if (_customTextBox.Text != "")
             {
                 SendKeys.SendWait("%{F4}");
                 DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNoCancel);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    SaveFileDialog(fileFormatFilter);
+                    SaveFileDialog(_fileFormatFilter);
                 }
                 if (DialogResult == DialogResult.No) { this.Close(); }
             }
@@ -437,112 +437,112 @@ namespace WordPad_WF
         #endregion
 
         #region - Tools events -
-        private void ZoomUp(object sender, EventArgs e)
+        private void ZoomUpEventArgs(object sender, EventArgs e)
         {
 
         }
-        private void ZoomDown(object sender, EventArgs e)
+        private void ZoomDownEventArgs(object sender, EventArgs e)
         {
 
         }
-        private void Search(object sender, EventArgs e)
+        private void SearchEventArgs(object sender, EventArgs e)
         {
             
         }
 
-        private void Replace(object sender, EventArgs e)
+        private void ReplaceEventArgs(object sender, EventArgs e)
         {
             
         }
 
-        private void SelectAll(object sender, EventArgs e) { SendKeys.Send("^a"); }
-        private void OpenPaint(object sender, EventArgs e)
+        private void SelectAllEventArgs(object sender, EventArgs e) { SendKeys.Send("^a"); }
+        private void OpenPaintEventArgs(object sender, EventArgs e)
         {
             
         }
-        private void OpenImage(object sender, EventArgs e)
+        private void OpenImageEventArgs(object sender, EventArgs e)
         {
 
-            openFileDialog.Filter = imageFormatFilter;
-            openFileDialog.ShowDialog();
-            string fileNameCheck = openFileDialog.FileName;
+            _openFileDialog.Filter = _imageFormatFilter;
+            _openFileDialog.ShowDialog();
+            string fileNameCheck = _openFileDialog.FileName;
 
             if (!String.IsNullOrEmpty(fileNameCheck))
             {
-                Image img = Image.FromFile(openFileDialog.FileName);
+                Image img = Image.FromFile(_openFileDialog.FileName);
                 Clipboard.Clear();
                 Clipboard.SetImage(img);
-                CustomTextBox.Paste();
+                _customTextBox.Paste();
                 Clipboard.Clear();
             }
         }
-        private void Cut(object sender, EventArgs e) { SendKeys.Send("^x"); }
-        private void Copy(object sender, EventArgs e) { SendKeys.Send("^c"); }
-        private void Paste(object sender, EventArgs e) { SendKeys.Send("^v"); }
-        private void Open(object sender, EventArgs e)
+        private void CutEventArgs(object sender, EventArgs e) { SendKeys.Send("^x"); }
+        private void CopyEventArgs(object sender, EventArgs e) { SendKeys.Send("^c"); }
+        private void PasteEventArgs(object sender, EventArgs e) { SendKeys.Send("^v"); }
+        private void OpenEventArgs(object sender, EventArgs e)
         {
-            openFileDialog.Filter = $"Все документы WordPad (*.rtf,*.docx,*.odt,*.txt)|*.rtf;*.docx;*.odt;*.txt|{fileFormatFilter}";
-            openFileDialog.ShowDialog();
+            _openFileDialog.Filter = $"Все документы WordPad (*.rtf,*.docx,*.odt,*.txt)|*.rtf;*.docx;*.odt;*.txt|{_fileFormatFilter}";
+            _openFileDialog.ShowDialog();
 
-            string fileNameCheck = openFileDialog.FileName;
+            string fileNameCheck = _openFileDialog.FileName;
 
             if (!String.IsNullOrEmpty(fileNameCheck))
             {
-                iconsToolBar.name.Text = $"   {Path.GetFileName(openFileDialog.FileName)} - WordPad";
-                file.fileHistory.SelectionStart = file.fileHistory.Text.Length;
-                file.fileHistory.Text = $"   {Path.GetFileName(openFileDialog.FileName)}";
-                CustomTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+                _iconsToolBar.name.Text = $"   {Path.GetFileName(_openFileDialog.FileName)} - WordPad";
+                _fileTab.fileHistory.SelectionStart = _fileTab.fileHistory.Text.Length;
+                _fileTab.fileHistory.Text = $"   {Path.GetFileName(_openFileDialog.FileName)}";
+                _customTextBox.Text = File.ReadAllText(_openFileDialog.FileName);
             }
-            file.Visible = false;
+            _fileTab.Visible = false;
         }
-        private void Create(object sender, EventArgs e)
+        private void CreateEventArgs(object sender, EventArgs e)
         {
-            if (CustomTextBox.Text != "")
+            if (_customTextBox.Text != "")
             {
                 DialogResult = MessageBox.Show($"Вы хотите сохранить изменения в", "WordPad", MessageBoxButtons.YesNo);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    SaveFileDialog(fileFormatFilter);
+                    SaveFileDialog(_fileFormatFilter);
                 }
             }
-            else { CustomTextBox.Text = ""; }
-            file.Visible = false;
+            else { _customTextBox.Text = ""; }
+            _fileTab.Visible = false;
         }
-        private void Save(object sender, EventArgs e)
+        private void SaveEventArgs(object sender, EventArgs e)
         {          
-            if (CustomTextBox.Text != "")
+            if (_customTextBox.Text != "")
             {
-                string path = openFileDialog.FileName;
+                string path = _openFileDialog.FileName;
                 if (path != "")
                 {
-                    File.WriteAllText(path, CustomTextBox.Text);
+                    File.WriteAllText(path, _customTextBox.Text);
                 }
             }
-            file.Visible = false;
+            _fileTab.Visible = false;
         }
-        private void SaveAs(object sender, EventArgs e)
+        private void SaveAsEventArgs(object sender, EventArgs e)
         {
-            SaveFileDialog(fileFormatFilter);
-            file.Visible = false;
+            SaveFileDialog(_fileFormatFilter);
+            _fileTab.Visible = false;
         }
-        private void Undo(object sender, EventArgs e) { SendKeys.Send("^z"); }
-        private void Redo(object sender, EventArgs e) { SendKeys.Send("^y"); }
+        private void UndoEventArgs(object sender, EventArgs e) { SendKeys.Send("^z"); }
+        private void RedoEventArgs(object sender, EventArgs e) { SendKeys.Send("^y"); }
  
-        private void SendMail(object sender, EventArgs e)
+        private void SendMailEventArgs(object sender, EventArgs e)
         {
             MessageBox.Show($"Команда \"отправить\" не смогла отправить сообщение", "WordPad",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            file.Visible = false;
+            _fileTab.Visible = false;
         }
 
-        private void QuickPrint(object sender, EventArgs e)
+        private void QuickPrintEventArgs(object sender, EventArgs e)
         {
-            printDoc.DocumentName = iconsToolBar.name.Text;
-            printDialog.Document = printDoc;
-            printDialog.AllowSelection = true;
-            printDialog.AllowSomePages = true;
-            if (printDialog.ShowDialog() == DialogResult.OK) printDoc.Print();
-            file.Visible = false;
+            _printDocument.DocumentName = _iconsToolBar.name.Text;
+            _printDialog.Document = _printDocument;
+            _printDialog.AllowSelection = true;
+            _printDialog.AllowSomePages = true;
+            if (_printDialog.ShowDialog() == DialogResult.OK) _printDocument.Print();
+            _fileTab.Visible = false;
         }
 
         #endregion
@@ -551,19 +551,19 @@ namespace WordPad_WF
 
         private void SaveFileDialog(string filter)
         {
-            if (CustomTextBox.Text != "")
+            if (_customTextBox.Text != "")
             {
-                saveFileDialog.Filter = filter;
-                saveFileDialog.ShowDialog();
+                _saveFileDialog.Filter = filter;
+                _saveFileDialog.ShowDialog();
 
-                string path = saveFileDialog.FileName;
+                string path = _saveFileDialog.FileName;
                 if (path != "")
                 {
-                    File.WriteAllText(path, CustomTextBox.Text);
+                    File.WriteAllText(path, _customTextBox.Text);
                 }
-                saveFileDialog.Reset();
+                _saveFileDialog.Reset();
             }
-            file.Visible = false;
+            _fileTab.Visible = false;
         }
 
         private void AlignText(int num)
@@ -571,24 +571,24 @@ namespace WordPad_WF
             switch (num)
             {
                 case 1:
-                    CustomTextBox.SelectAll();
-                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Left;
+                    _customTextBox.SelectAll();
+                    _customTextBox.SelectionAlignment = HorizontalAlignment.Left;
                     break;
                 case 2:
-                    CustomTextBox.SelectAll();
-                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Center;
+                    _customTextBox.SelectAll();
+                    _customTextBox.SelectionAlignment = HorizontalAlignment.Center;
                     break;
                 case 3:
-                    CustomTextBox.SelectAll();
-                    CustomTextBox.SelectionAlignment = HorizontalAlignment.Right;
+                    _customTextBox.SelectAll();
+                    _customTextBox.SelectionAlignment = HorizontalAlignment.Right;
                     break;
                 case 4:
-                    CustomTextBox.SelectAll();
-                    CustomTextBox.SelectionIndent = 0;
+                    _customTextBox.SelectAll();
+                    _customTextBox.SelectionIndent = 0;
                     break;
                 case 5:
-                    CustomTextBox.SelectAll();
-                    CustomTextBox.SelectionIndent = 40;
+                    _customTextBox.SelectAll();
+                    _customTextBox.SelectionIndent = 40;
                     break;
                 default:
                     break;

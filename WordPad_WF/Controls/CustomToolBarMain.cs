@@ -8,11 +8,11 @@ namespace WordPad_WF.Controls
     class CustomToolBarMain : Panel
     {
         #region - Objects - 
-        GroupBox bufferSector;
-        GroupBox fontSector;
-        GroupBox paragraphSector;
-        GroupBox insertSector;
-        GroupBox editingSector;
+        private GroupBox _bufferSector;
+        private GroupBox _fontSector;
+        private GroupBox _paragraphSector;
+        private GroupBox _insertSector;
+        private GroupBox _editingSector;
 
         public ComboBox fontName;
         public ComboBox fontSize;
@@ -60,12 +60,12 @@ namespace WordPad_WF.Controls
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
             #region - Buffer Sector -
-            bufferSector = new GroupBox()
+            _bufferSector = new GroupBox()
             {
                 Location = new Point(0, -5),
                 Size = new Size(160, 106),               
             };
-            bufferSector.Controls.Add(new Label()
+            _bufferSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(100, 15),
@@ -83,18 +83,18 @@ namespace WordPad_WF.Controls
             buttonCopy.Text = "Копировать";
 
 
-            bufferSector.Controls.Add(buttonPaste);
-            bufferSector.Controls.Add(buttonCut);
-            bufferSector.Controls.Add(buttonCopy);
+            _bufferSector.Controls.Add(buttonPaste);
+            _bufferSector.Controls.Add(buttonCut);
+            _bufferSector.Controls.Add(buttonCopy);
             #endregion
 
             #region - Font Sector - 
-            fontSector = new GroupBox()
+            _fontSector = new GroupBox()
             {
                 Location = new Point(158, -5),
                 Size = new Size(226, 106),
             };
-            fontSector.Controls.Add(new Label()
+            _fontSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(100, 15),
@@ -206,28 +206,28 @@ namespace WordPad_WF.Controls
                 BackgroundImageLayout = ImageLayout.Stretch
             };
 
-            fontSector.Controls.Add(fontName);
-            fontSector.Controls.Add(fontSize);
-            fontSector.Controls.Add(fontSizeUp);
-            fontSector.Controls.Add(fontSizeDown);
-            fontSector.Controls.Add(fontBold);
-            fontSector.Controls.Add(fontItalic);
-            fontSector.Controls.Add(fontUnderline);
-            fontSector.Controls.Add(strikethrow);
-            fontSector.Controls.Add(subscript);
-            fontSector.Controls.Add(superscrypt);
-            fontSector.Controls.Add(fontColor);
-            fontSector.Controls.Add(textSelectionСolor);
+            _fontSector.Controls.Add(fontName);
+            _fontSector.Controls.Add(fontSize);
+            _fontSector.Controls.Add(fontSizeUp);
+            _fontSector.Controls.Add(fontSizeDown);
+            _fontSector.Controls.Add(fontBold);
+            _fontSector.Controls.Add(fontItalic);
+            _fontSector.Controls.Add(fontUnderline);
+            _fontSector.Controls.Add(strikethrow);
+            _fontSector.Controls.Add(subscript);
+            _fontSector.Controls.Add(superscrypt);
+            _fontSector.Controls.Add(fontColor);
+            _fontSector.Controls.Add(textSelectionСolor);
             
             #endregion
 
             #region - Paragraph Sector - 
-            paragraphSector = new GroupBox()
+            _paragraphSector = new GroupBox()
             {
                 Location = new Point(382, -5),
                 Size = new Size(128, 106),
             };
-            paragraphSector.Controls.Add(new Label()
+            _paragraphSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(60, 15),
@@ -307,24 +307,24 @@ namespace WordPad_WF.Controls
                 BackgroundImageLayout = ImageLayout.Stretch
             };
 
-            paragraphSector.Controls.Add(indent);
-            paragraphSector.Controls.Add(outdent);
-            paragraphSector.Controls.Add(checkList);
-            paragraphSector.Controls.Add(updown);
-            paragraphSector.Controls.Add(alignLeft);
-            paragraphSector.Controls.Add(alignCenter);
-            paragraphSector.Controls.Add(alignRight);
-            paragraphSector.Controls.Add(alignJustify);
-            paragraphSector.Controls.Add(paragraph);
+            _paragraphSector.Controls.Add(indent);
+            _paragraphSector.Controls.Add(outdent);
+            _paragraphSector.Controls.Add(checkList);
+            _paragraphSector.Controls.Add(updown);
+            _paragraphSector.Controls.Add(alignLeft);
+            _paragraphSector.Controls.Add(alignCenter);
+            _paragraphSector.Controls.Add(alignRight);
+            _paragraphSector.Controls.Add(alignJustify);
+            _paragraphSector.Controls.Add(paragraph);
             #endregion
 
             #region - Insert Sector - 
-            insertSector = new GroupBox()
+            _insertSector = new GroupBox()
             {
                 Location = new Point(508, -5),
                 Size = new Size(226, 106),
             };
-            insertSector.Controls.Add(new Label()
+            _insertSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(100, 15),
@@ -344,19 +344,19 @@ namespace WordPad_WF.Controls
             buttonObject = new OnPaintButtons(new Point(177, 12), Properties.Resources.objects_40px, new Size(46, 70), 6, 4, 36, 36, 2, 40, 50, 26);
             buttonObject.Text = "Объект";
 
-            insertSector.Controls.Add(buttonPicture);
-            insertSector.Controls.Add(buttonPaint);
-            insertSector.Controls.Add(buttonDate);
-            insertSector.Controls.Add(buttonObject);
+            _insertSector.Controls.Add(buttonPicture);
+            _insertSector.Controls.Add(buttonPaint);
+            _insertSector.Controls.Add(buttonDate);
+            _insertSector.Controls.Add(buttonObject);
             #endregion
 
             #region - Editing Sector -
-            editingSector = new GroupBox()
+            _editingSector = new GroupBox()
             {
                 Location = new Point(728, -5),
                 Size = new Size(126, 106),
             };
-            editingSector.Controls.Add(new Label()
+            _editingSector.Controls.Add(new Label()
             {
                 AutoSize = false,
                 Size = new Size(60, 15),
@@ -373,16 +373,16 @@ namespace WordPad_WF.Controls
             buttonSelectAll = new OnPaintButtons(new Point(12, 62), Properties.Resources.select_all_64px, new Size(100, 24), 3, 3, 18, 18, 24, 2, 80, 20);
             buttonSelectAll.Text = "Выделить всё";
 
-            editingSector.Controls.Add(buttonSearch);
-            editingSector.Controls.Add(buttonRepalace);
-            editingSector.Controls.Add(buttonSelectAll);
+            _editingSector.Controls.Add(buttonSearch);
+            _editingSector.Controls.Add(buttonRepalace);
+            _editingSector.Controls.Add(buttonSelectAll);
             #endregion
 
-            this.Controls.Add(bufferSector);
-            this.Controls.Add(fontSector);
-            this.Controls.Add(paragraphSector);
-            this.Controls.Add(insertSector);
-            this.Controls.Add(editingSector);
+            this.Controls.Add(_bufferSector);
+            this.Controls.Add(_fontSector);
+            this.Controls.Add(_paragraphSector);
+            this.Controls.Add(_insertSector);
+            this.Controls.Add(_editingSector);
         }
     }
 }
