@@ -4,4 +4,4 @@ Menu "SaveAs" ![Menu SaveAs ](https://user-images.githubusercontent.com/45212175
 
 Menu Tab "Main" ![Menu Tab Main](https://user-images.githubusercontent.com/45212175/163063986-34d27a4f-df1a-4094-acad-f582f7d0ff94.png)
 
-Menu Tab "Wiew" ![Menu Tab View](https://user-images.githubusercontent.com/45212175/163064026-a3fbc764-b7a0-4529-9c62-ed1928477149.png)
+Menu Tab "View" ![Menu Tab View](https://user-images.githubusercontent.com/45212175/163064026-a3fbc764-b7a0-4529-9c62-ed1928477149.png)
